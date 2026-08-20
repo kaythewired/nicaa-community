@@ -800,9 +800,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .brochure-cover strong { color: var(--ivory); font-family: var(--display); font-size: clamp(100px, 13vw, 180px); font-weight: 400; line-height: .63; letter-spacing: -.09em; }
 .brochure-cover span { max-width: 225px; margin-top: 31px; font-family: var(--display); font-size: 29px; line-height: .9; }
 .brochure-cover i { margin-top: 52px; color: #bfe2c6; font-size: 9px; font-style: normal; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.brochure-cover--image { display: block; padding: 0; background: var(--ink); }
+.brochure-cover--image::before, .brochure-cover--image::after { display: none; }
+.brochure-cover--image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .brochure-introduction { display: grid; grid-template-columns: 1fr .52fr; align-items: end; gap: clamp(40px, 7vw, 120px); }
 .brochure-introduction h2 { max-width: 800px; margin: 0; font-size: clamp(54px, 6.7vw, 107px); line-height: .78; }
 .brochure-introduction > p { max-width: 500px; margin: 0 0 7px; color: rgba(20,32,25,.65); line-height: 1.8; }
+.brochure-pages { width: 100%; padding-right: max(40px, calc((100vw - 1440px) / 2)); padding-left: max(40px, calc((100vw - 1440px) / 2)); background: var(--ivory); }
+.brochure-pages__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 44px); }
+.brochure-page { display: grid; margin: 0; overflow: hidden; background: var(--ink); box-shadow: 13px 15px 0 rgba(181,74,50,.24); }
+.brochure-page img { width: 100%; height: min(64vw, 760px); object-fit: contain; background: #1e2b26; }
+.brochure-page figcaption { padding: 15px 17px; background: var(--ink); color: rgba(255,255,255,.75); font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.brochure-page--rotated { background: #b8554e; }
+.brochure-page--rotated img { object-fit: cover; object-position: center; transform: rotate(-90deg) scale(1.38); }
 .brochure-contents { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; padding-top: 0; }
 .brochure-contents article { display: grid; min-height: 285px; grid-template-columns: 42px 1fr; gap: 25px; align-items: end; padding: clamp(25px, 4vw, 50px); border: 1px solid var(--line); border-bottom: 0; background: var(--ivory); }
 .brochure-contents article:nth-child(2n) { border-left: 0; background: var(--paper); }
@@ -840,6 +850,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .president-ledger__note { grid-column: 3; }
   .history-chapters article { grid-template-columns: 50px 125px 1fr; }
   .brochure-cover { width: min(560px, calc(100% - 35px)); min-height: 500px; margin: 15px 0 20px; }
+  .brochure-pages__grid { grid-template-columns: 1fr; width: min(620px, 100%); }
   .brochure-request { align-items: flex-start; flex-direction: column; }
   .news-article-hero figure { min-height: 520px; }
 }
@@ -859,6 +870,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .brochure-contents article:nth-last-child(-n+2) { border-bottom: 0; }
   .brochure-contents article:last-child { border-bottom: 1px solid var(--line); }
   .brochure-cover { min-height: 420px; box-shadow: 11px 14px 0 var(--terracotta); }
+  .brochure-page img { height: 124vw; }
   .news-article-hero__copy { padding: 40px 16px 56px; }
   .news-article-hero figure { min-height: 390px; }
   .news-article-body { width: calc(100% - 32px); }

@@ -26,12 +26,17 @@ export default function BrochurePage() {
             aspirations at a pivotal moment in its journey.
           </p>
         </div>
-        <div className="brochure-cover" aria-label="2022 NICAA brochure cover">
-          <p>NICAA</p>
-          <strong>2022</strong>
-          <span>Nigerian Community in Angola</span>
-          <i>Peace / Unity / Progress</i>
-        </div>
+        <figure className="brochure-cover brochure-cover--image">
+          {/* The brochure pages are delivered directly from the NICAA archive. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/media/brochure-page-01.avif"
+            alt="Cover of the 2022 Nigerian Community Association Angola brochure"
+            width={352}
+            height={484}
+            fetchPriority="high"
+          />
+        </figure>
       </section>
 
       <section className="subpage-section brochure-introduction" aria-labelledby="brochure-introduction-title">
@@ -44,6 +49,40 @@ export default function BrochurePage() {
           community publication. This archive page makes the publication easy
           to find while preserving the context around it.
         </p>
+      </section>
+
+      <section className="subpage-section brochure-pages" aria-labelledby="brochure-pages-title">
+        <header className="subpage-section__header">
+          <p className="subpage-kicker">Original uploaded pages</p>
+          <h2 id="brochure-pages-title">The brochure, preserved in full view.</h2>
+          <p>
+            These are the two images uploaded to the original NICAA brochure page.
+          </p>
+        </header>
+        <div className="brochure-pages__grid">
+          <figure className="brochure-page">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/brochure-page-01.avif"
+              alt="2022 Nigerian Community Association Angola brochure cover"
+              width={352}
+              height={484}
+              loading="lazy"
+            />
+            <figcaption>Brochure cover - 13 November 2022</figcaption>
+          </figure>
+          <figure className="brochure-page brochure-page--rotated">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/brochure-page-02.avif"
+              alt="Community-support page included in the NICAA brochure upload"
+              width={352}
+              height={484}
+              loading="lazy"
+            />
+            <figcaption>Second page from the original upload</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className="subpage-section brochure-contents" aria-label="Brochure contents">
