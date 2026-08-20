@@ -10,16 +10,30 @@ const navigation = [
   { href: "/leadership", label: "Leadership" },
   { href: "/unions", label: "Town unions" },
   { href: "/news", label: "News" },
-  { href: "/resources", label: "Archive" },
-  { href: "/contact", label: "Contact" },
+] as const;
+
+const moreNavigation = [
+  { href: "/resources", label: "Resources" },
+  { href: "/history", label: "History of NICAA" },
+  { href: "/past-presidents", label: "Past Presidents" },
+  { href: "/brochure", label: "2022 Brochure" },
+  { href: "/ambassador", label: "Ambassador Archive" },
 ] as const;
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsMoreOpen(false);
+  };
+
+  const isMoreActive = moreNavigation.some(
+    (item) => pathname === item.href || pathname.startsWith(`${item.href}/`),
+  );
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -27,6 +41,7 @@ export function SiteHeader() {
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       setIsMenuOpen(false);
+      setIsMoreOpen(false);
       menuButtonRef.current?.focus();
     };
 
@@ -101,6 +116,33 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
+            <li className="site-navigation-item site-navigation-more">
+              <details
+                open={isMoreOpen}
+                onToggle={(event) => setIsMoreOpen(event.currentTarget.open)}
+              >
+                <summary
+                  className={`site-navigation-link site-navigation-more-trigger${
+                    isMoreActive ? " site-navigation-link-active" : ""
+                  }`}
+                >
+                  More <span aria-hidden="true">+</span>
+                </summary>
+                <ul className="site-navigation-more-menu" aria-label="More pages">
+                  {moreNavigation.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        className={pathname === item.href ? "site-navigation-more-link site-navigation-more-link-active" : "site-navigation-more-link"}
+                        href={item.href}
+                        onClick={closeMenu}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
           </ul>
 
           <Link className="site-contact-cta" href="/contact" onClick={closeMenu}>
