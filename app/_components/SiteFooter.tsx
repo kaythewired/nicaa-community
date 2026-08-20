@@ -37,7 +37,13 @@ export function SiteFooter() {
       </div>
       <div className="site-shell footer-bottom">
         <div className="footer-brand">
-          <Image src="/media/nicaa-logo.png" alt="" width={72} height={66} />
+          <Image
+            src="/media/nicaa-logo.png"
+            alt=""
+            width={72}
+            height={66}
+            unoptimized
+          />
           <span>Nigerian Community<br />in Angola</span>
         </div>
         <p>Peace · Unity · Progress</p>

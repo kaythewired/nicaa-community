@@ -51,6 +51,7 @@ export function SiteHeader() {
             width={300}
             height={96}
             preload
+            unoptimized
           />
         </Link>
 
