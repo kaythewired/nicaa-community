@@ -1,6 +1,9 @@
+import townUnionRostersJson from "./town-union-rosters.json";
+
 export interface TownUnion {
   name: string;
   letter: string;
+  roster: string;
 }
 
 export interface Leader {
@@ -118,6 +121,7 @@ const townUnionNames = [
 export const townUnions: TownUnion[] = townUnionNames.map((name) => ({
   name,
   letter: name.charAt(0),
+  roster: townUnionRostersJson[name] ?? "",
 }));
 
 export const leaders: Leader[] = [

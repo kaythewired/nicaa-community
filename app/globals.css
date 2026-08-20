@@ -232,16 +232,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .union-results-status { margin: 0; color: rgba(20,32,25,.6); font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
 .union-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); list-style: none; }
 .union-results-item { min-width: 0; }
-.union-card { display: grid; min-height: 150px; grid-template-columns: 40px 1fr 24px; align-items: center; gap: 16px; padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s ease, color .25s ease; }
-.union-card:hover { background: var(--palm); color: white; }
+.union-card { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); transition: background .25s ease, color .25s ease; }
+.union-card:hover, .union-card[open] { background: var(--palm); color: white; }
+.union-card-summary { display: grid; min-height: 150px; grid-template-columns: 40px 1fr 24px; align-items: center; gap: 16px; padding: 20px; cursor: pointer; list-style: none; }
+.union-card-summary::-webkit-details-marker { display: none; }
 .union-card-letter { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid currentColor; border-radius: 50%; color: var(--terracotta); font-family: var(--display); font-size: 18px; }
-.union-card:hover .union-card-letter { color: var(--gold); }
+.union-card:hover .union-card-letter, .union-card[open] .union-card-letter { color: var(--gold); }
 .union-card-copy { min-width: 0; }
 .union-card-label { display: block; margin-bottom: 7px; color: rgba(20,32,25,.5); font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-.union-card:hover .union-card-label { color: rgba(255,255,255,.62); }
+.union-card:hover .union-card-label, .union-card[open] .union-card-label { color: rgba(255,255,255,.62); }
 .union-card-name { display: block; font-family: var(--display); font-size: clamp(18px, 1.8vw, 26px); line-height: .98; letter-spacing: -.04em; }
-.union-card-arrow { font-size: 20px; transition: transform .2s ease; }
-.union-card:hover .union-card-arrow { transform: translateX(5px); }
+.union-card-count { display: block; margin-top: 11px; color: rgba(20,32,25,.53); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.union-card:hover .union-card-count, .union-card[open] .union-card-count { color: rgba(255,255,255,.62); }
+.union-card-arrow { display: grid; width: 24px; height: 24px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 18px; line-height: 1; transition: transform .2s ease; }
+.union-card-arrow::before { content: "+"; }
+.union-card[open] .union-card-arrow { transform: rotate(45deg); }
+.union-card-roster { margin: 0 20px 20px; padding: 25px 0 0; border-top: 1px solid rgba(255,255,255,.28); }
+.union-card-roster h3 { margin: 0 0 13px; color: var(--gold); font-family: var(--sans); font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.union-roster-officers { margin-bottom: 28px; }
+.union-roster-officers ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.union-roster-officers li { color: rgba(255,255,255,.83); font-size: 13px; line-height: 1.55; }
+.union-roster-members ol { columns: 2; column-gap: 24px; margin: 0; padding: 0; list-style: none; }
+.union-roster-members li { display: grid; grid-template-columns: 31px minmax(0, 1fr); gap: 9px; break-inside: avoid; padding: 7px 0; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.88); font-size: 13px; line-height: 1.45; }
+.union-roster-members li > span:first-child { color: #a8d5b0; font-size: 8px; font-weight: 900; letter-spacing: .08em; padding-top: 3px; }
 .union-results-empty { padding: 65px 30px; border: 1px solid var(--line); text-align: center; }
 .union-results-empty-title { margin-bottom: 8px; font-family: var(--display); font-size: 32px; }
 .union-results-empty-copy { color: rgba(20,32,25,.6); }
@@ -544,7 +557,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .union-directory-intro { margin-left: 0; }
   .union-directory-tools { padding: 20px 14px; }
   .union-results-grid { grid-template-columns: 1fr; }
-  .union-card { min-height: 125px; }
+  .union-card-summary { min-height: 125px; padding: 17px 14px; gap: 12px; }
+  .union-card-roster { margin: 0 14px 14px; padding-top: 20px; }
+  .union-roster-members ol { columns: 1; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-statement { grid-column: 1; }
   .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; padding: 30px 0; }

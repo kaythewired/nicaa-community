@@ -55,11 +55,11 @@ export default function UnionsPage() {
       >
         <header className="subpage-section__header">
           <p className="subpage-kicker">Community directory</p>
-          <h2 id="directory-title">Search by union name or browse alphabetically.</h2>
+          <h2 id="directory-title">Search a town union, officer, or member name.</h2>
           <p>
-            This public directory lists association names only. Member rosters
-            and personal contact details are handled through the community
-            office to protect privacy.
+            This complete public record preserves the town-union rosters,
+            officers, and contact details published on the original NICAA
+            directory. Open any union card to see its full list.
           </p>
         </header>
         <UnionDirectory unions={townUnions} />
@@ -83,11 +83,12 @@ export default function UnionsPage() {
         </Link>
       </section>
 
-      <aside className="page-unions__privacy" aria-label="Directory privacy note">
-        <p className="subpage-kicker">Privacy by design</p>
+      <aside className="page-unions__privacy" aria-label="Directory source note">
+        <p className="subpage-kicker">Directory record</p>
         <p>
-          Leadership telephone numbers and member lists are not published in
-          this directory. Verified requests can be routed through NICAA at{" "}
+          This page reproduces the public town-union information from the
+          original NICAA website in a clearer searchable format. To correct or
+          update a listing, contact the community office at{" "}
           <a href="mailto:nigeriancommunityinangola@gmail.com">
             nigeriancommunityinangola@gmail.com
           </a>

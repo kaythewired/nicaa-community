@@ -38,10 +38,11 @@ test("server-renders the NICAA homepage", async () => {
 
 test("keeps the starter preview removed and the community routes wired", async () => {
   const routes = ["about", "leadership", "unions", "news", "resources", "contact"];
-  const [layout, home, data, packageJson, ...routeSources] = await Promise.all([
+  const [layout, home, data, rosters, packageJson, ...routeSources] = await Promise.all([
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/_data/community.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/_data/town-union-rosters.json", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     ...routes.map((route) =>
       readFile(new URL(`../app/${route}/page.tsx`, import.meta.url), "utf8"),
@@ -55,6 +56,8 @@ test("keeps the starter preview removed and the community routes wired", async (
   assert.match(data, /export const townUnions/);
   assert.match(data, /export const leaders/);
   assert.match(data, /export const newsItems/);
+  assert.match(rosters, /ABAGANA WELFARE UNION/);
+  assert.match(rosters, /UTUH MBADIKE IMPROVEMENT UNION/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 
   for (const source of routeSources) {
