@@ -14,6 +14,11 @@ const brochureSections = [
   "The shared call for peace, unity, and progress",
 ] as const;
 
+const brochurePageNumbers = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+  16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 30,
+] as const;
+
 export default function BrochurePage() {
   return (
     <main id="main-content" className="subpage-shell page-archive page-brochure">
@@ -56,32 +61,29 @@ export default function BrochurePage() {
           <p className="subpage-kicker">Original uploaded pages</p>
           <h2 id="brochure-pages-title">The brochure, preserved in full view.</h2>
           <p>
-            These are the two images uploaded to the original NICAA brochure page.
+            These are the 25 brochure images the original NICAA page currently
+            makes publicly available.
           </p>
         </header>
         <div className="brochure-pages__grid">
-          <figure className="brochure-page">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/media/brochure-page-01.avif"
-              alt="2022 Nigerian Community Association Angola brochure cover"
-              width={352}
-              height={484}
-              loading="lazy"
-            />
-            <figcaption>Brochure cover - 13 November 2022</figcaption>
-          </figure>
-          <figure className="brochure-page brochure-page--rotated">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/media/brochure-page-02.avif"
-              alt="Community-support page included in the NICAA brochure upload"
-              width={352}
-              height={484}
-              loading="lazy"
-            />
-            <figcaption>Second page from the original upload</figcaption>
-          </figure>
+          {brochurePageNumbers.map((pageNumber, index) => (
+            <figure
+              className={`brochure-page${pageNumber === 2 ? " brochure-page--rotated" : ""}`}
+              key={pageNumber}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/media/brochure-page-${String(pageNumber).padStart(2, "0")}.avif`}
+                alt={`Page ${pageNumber} from the 2022 NICAA brochure archive`}
+                width={704}
+                height={969}
+                loading={index < 2 ? "eager" : "lazy"}
+              />
+              <figcaption>
+                Archive image {index + 1} of {brochurePageNumbers.length} - page {pageNumber}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
