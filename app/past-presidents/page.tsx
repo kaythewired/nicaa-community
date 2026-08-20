@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { pastPresidents } from "../_data/community";
 
@@ -50,12 +49,15 @@ export default function PastPresidentsPage() {
                 {String(index + 1).padStart(2, "0")}
               </span>
               <figure className="president-ledger__portrait">
-                <Image
+                {/* The archive portraits are served directly to keep every image reliable. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={president.image}
                   alt={`Portrait of ${president.name}`}
                   width={538}
                   height={646}
-                  sizes="(max-width: 640px) 30vw, (max-width: 900px) 22vw, 130px"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                 />
               </figure>
               <div>
