@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -44,14 +43,15 @@ export function SiteHeader() {
           aria-label="Nigerian Community in Angola Association home"
           onClick={closeMenu}
         >
-          <Image
+          {/* The public logo is delivered directly to avoid the remote image optimizer. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             className="site-brand-logo"
             src="/media/nicaa-logo.png"
             alt="Nigerian Community in Angola Association"
             width={300}
             height={96}
-            preload
-            unoptimized
+            fetchPriority="high"
           />
         </Link>
 

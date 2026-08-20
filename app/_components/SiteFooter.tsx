@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const navigation = [
   ["Our story", "/about"],
   ["Leadership", "/leadership"],
@@ -37,12 +35,12 @@ export function SiteFooter() {
       </div>
       <div className="site-shell footer-bottom">
         <div className="footer-brand">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/media/nicaa-logo.png"
             alt=""
             width={72}
             height={66}
-            unoptimized
           />
           <span>Nigerian Community<br />in Angola</span>
         </div>
