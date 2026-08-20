@@ -759,8 +759,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .archive-introduction > p:last-child { margin: 38px 0 0; color: rgba(20,32,25,.64); line-height: 1.78; }
 .president-ledger { padding-top: 0; }
 .president-ledger ol { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
-.president-ledger li { display: grid; grid-template-columns: 90px minmax(260px, .7fr) 1fr; align-items: center; gap: clamp(30px, 5vw, 86px); min-height: 210px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+.president-ledger li { display: grid; grid-template-columns: 70px 130px minmax(240px, .7fr) 1fr; align-items: center; gap: clamp(24px, 3.6vw, 62px); min-height: 210px; padding: 34px 0; border-bottom: 1px solid var(--line); }
 .president-ledger__number { color: var(--terracotta); font-family: var(--display); font-size: 34px; }
+.president-ledger__portrait { width: 130px; height: 156px; overflow: hidden; background: var(--ivory); }
+.president-ledger__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(.85); transition: filter .25s ease, transform .55s cubic-bezier(.16,1,.3,1); }
+.president-ledger li:hover .president-ledger__portrait img { filter: saturate(1); transform: scale(1.05); }
 .president-ledger li > div p { margin: 0 0 15px; color: var(--terracotta); font-size: 9px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
 .president-ledger h2 { margin: 0; font-size: clamp(36px, 4vw, 65px); line-height: .84; }
 .president-ledger__note { max-width: 440px; margin: 0; color: rgba(20,32,25,.6); line-height: 1.7; }
@@ -832,8 +835,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .archive-hero, .ambassador-hero, .brochure-hero, .news-article-hero { grid-template-columns: 1fr; }
   .archive-introduction, .history-prologue, .ambassador-notice, .ambassador-profile, .brochure-introduction { grid-template-columns: 1fr; }
   .archive-introduction > p:last-child, .history-prologue > p:not(.subpage-kicker,.history-prologue__note), .history-prologue__note, .ambassador-notice > p:last-child { margin-top: 0; }
-  .president-ledger li { grid-template-columns: 55px 1fr; gap: 25px; }
-  .president-ledger__note { grid-column: 2; }
+  .president-ledger li { grid-template-columns: 55px 110px 1fr; gap: 22px; }
+  .president-ledger__portrait { width: 110px; height: 132px; }
+  .president-ledger__note { grid-column: 3; }
   .history-chapters article { grid-template-columns: 50px 125px 1fr; }
   .brochure-cover { width: min(560px, calc(100% - 35px)); min-height: 500px; margin: 15px 0 20px; }
   .brochure-request { align-items: flex-start; flex-direction: column; }
@@ -842,9 +846,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 @media (max-width: 640px) {
   .archive-hero__stamp { width: min(360px, 100%); }
-  .president-ledger li { grid-template-columns: 38px 1fr; gap: 16px; min-height: 0; padding: 32px 0; }
+  .president-ledger li { grid-template-columns: 33px 82px 1fr; gap: 14px; min-height: 0; padding: 27px 0; }
   .president-ledger__number { font-size: 24px; }
-  .president-ledger__note { grid-column: 2; }
+  .president-ledger__portrait { width: 82px; height: 102px; }
+  .president-ledger__note { grid-column: 3; font-size: 13px; }
   .history-chapters article { grid-template-columns: 42px 1fr; gap: 15px; }
   .history-chapters__year { grid-column: 2; }
   .history-chapters div { grid-column: 2; }

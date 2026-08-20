@@ -17,6 +17,7 @@ export interface PastPresident {
   name: string;
   tenure: string;
   note: string;
+  image: string;
 }
 
 export interface CommunityObjective {
@@ -194,41 +195,49 @@ export const pastPresidents: PastPresident[] = [
     name: "Hon. Chidebe Nze",
     tenure: "President, 1995 - February 2003",
     note: "First interim president of the organised Nigerian Community in Angola.",
+    image: "/media/past-president-01.avif",
   },
   {
     name: "Late Engr. Austin Odigie",
     tenure: "President, February - June 2003",
     note: "Continued the community's early work during a short period of service.",
+    image: "/media/past-president-02.avif",
   },
   {
     name: "Hon. Ifeanyi Nworah",
     tenure: "President, June 2003 - 30 April 2004",
     note: "Supported the transition and handed key community documents to the Nigerian Mission.",
+    image: "/media/past-president-03.avif",
   },
   {
     name: "Late Mr. John Ogebulue",
     tenure: "Caretaker, 2004 - 2007",
     note: "Led the caretaker period that prepared the community for its first general election.",
+    image: "/media/past-president-04.avif",
   },
   {
     name: "Hon. Basil Ngige",
     tenure: "President, 2007 - 2011",
     note: "The first elected president recorded in the NICAA archive.",
+    image: "/media/past-president-05.avif",
   },
   {
     name: "Hon. Benjamin Okeke (OKB)",
     tenure: "President, 2011 - May 2015",
     note: "Expanded the town-union representative model for community coordination.",
+    image: "/media/past-president-06.avif",
   },
   {
     name: "Hon. Sampson Ebigbo",
     tenure: "President, 2015 - 2018",
     note: "Continued the community's member-protection and civic engagement work.",
+    image: "/media/past-president-07.avif",
   },
   {
     name: "Hon. Chukwuemeka George Onyemeforo",
     tenure: "Interim President, 2019 - 2021",
     note: "Helped restore a unified governance process and prepared the 2021 election transition.",
+    image: "/media/past-president-08.avif",
   },
 ];
 
