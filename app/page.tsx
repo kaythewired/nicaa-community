@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { historyTimeline, leaders, newsItems, objectives, townUnions } from "./_data/community";
 
 export const metadata: Metadata = {
@@ -147,11 +148,11 @@ export default function Home() {
         <div className="site-shell">
           <div className="news-preview-heading" data-reveal>
             <div><p className="section-kicker kicker-light">Community dispatch</p><h2>What’s happening<br /><em>across our network.</em></h2></div>
-            <a className="text-link text-link-light" href="/news">View all news <span aria-hidden="true">→</span></a>
+            <Link className="text-link text-link-light" href="/news">View all news <span aria-hidden="true">→</span></Link>
           </div>
           <div className="news-preview-grid">
             {featuredNews.map((item, index) => (
-              <a className={`news-preview-card news-preview-${index + 1}`} href="/news" data-reveal key={item.slug}>
+              <Link className={`news-preview-card news-preview-${index + 1}`} href={`/news/${item.slug}`} data-reveal key={item.slug}>
                 <figure>
                   <Image
                     src={item.image}
@@ -162,7 +163,7 @@ export default function Home() {
                   />
                 </figure>
                 <div><p><span>{item.category}</span><time>{item.date}</time></p><h3>{item.title}</h3><span className="news-arrow" aria-hidden="true">↗</span></div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

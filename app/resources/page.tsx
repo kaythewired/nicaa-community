@@ -14,16 +14,16 @@ const resourceCards = [
     title: "2022 NICAA brochure",
     description:
       "A preserved snapshot of community programmes, leadership, and milestones from the original NICAA website.",
-    href: "mailto:nigeriancommunityinangola@gmail.com?subject=Request%20for%202022%20NICAA%20brochure",
-    action: "Request a copy",
+    href: "/brochure",
+    action: "Open brochure archive",
   },
   {
     label: "History and governance",
     title: "How the community grew",
     description:
       "Follow the story from the first organised community leadership in 1995 through later governance and institution-building milestones.",
-    href: "/about#history",
-    action: "Explore the timeline",
+    href: "/history",
+    action: "Read the full history",
   },
   {
     label: "Member network",
@@ -40,6 +40,22 @@ const resourceCards = [
       "Review project updates, official engagements, community events, and other selected reports from NICAA.",
     href: "/news",
     action: "Read the updates",
+  },
+  {
+    label: "Leadership archive",
+    title: "Past presidents",
+    description:
+      "Remember the presidents and caretaker leaders who served the community from 1995 to 2021.",
+    href: "/past-presidents",
+    action: "View the legacy record",
+  },
+  {
+    label: "Diplomatic archive",
+    title: "Ambassador profile",
+    description:
+      "Read the archived profile from NICAA's former website, clearly marked as historical information.",
+    href: "/ambassador",
+    action: "Open the archive",
   },
 ] as const;
 

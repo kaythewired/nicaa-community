@@ -13,6 +13,12 @@ export interface Leader {
   summary?: string;
 }
 
+export interface PastPresident {
+  name: string;
+  tenure: string;
+  note: string;
+}
+
 export interface CommunityObjective {
   number: string;
   title: string;
@@ -180,6 +186,49 @@ export const leaders: Leader[] = [
     name: "Hon. Ude Okwudiri",
     role: "Provost II",
     image: "/media/leader-11.avif",
+  },
+];
+
+export const pastPresidents: PastPresident[] = [
+  {
+    name: "Hon. Chidebe Nze",
+    tenure: "President, 1995 - February 2003",
+    note: "First interim president of the organised Nigerian Community in Angola.",
+  },
+  {
+    name: "Late Engr. Austin Odigie",
+    tenure: "President, February - June 2003",
+    note: "Continued the community's early work during a short period of service.",
+  },
+  {
+    name: "Hon. Ifeanyi Nworah",
+    tenure: "President, June 2003 - 30 April 2004",
+    note: "Supported the transition and handed key community documents to the Nigerian Mission.",
+  },
+  {
+    name: "Late Mr. John Ogebulue",
+    tenure: "Caretaker, 2004 - 2007",
+    note: "Led the caretaker period that prepared the community for its first general election.",
+  },
+  {
+    name: "Hon. Basil Ngige",
+    tenure: "President, 2007 - 2011",
+    note: "The first elected president recorded in the NICAA archive.",
+  },
+  {
+    name: "Hon. Benjamin Okeke (OKB)",
+    tenure: "President, 2011 - May 2015",
+    note: "Expanded the town-union representative model for community coordination.",
+  },
+  {
+    name: "Hon. Sampson Ebigbo",
+    tenure: "President, 2015 - 2018",
+    note: "Continued the community's member-protection and civic engagement work.",
+  },
+  {
+    name: "Hon. Chukwuemeka George Onyemeforo",
+    tenure: "Interim President, 2019 - 2021",
+    note: "Helped restore a unified governance process and prepared the 2021 election transition.",
   },
 ];
 

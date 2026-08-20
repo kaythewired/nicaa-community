@@ -56,6 +56,9 @@ export default function NewsPage() {
             </div>
             <h2 id="featured-news-title">{featuredStory.title}</h2>
             <p>{featuredStory.excerpt}</p>
+            <Link className="news-read-link" href={`/news/${featuredStory.slug}`}>
+              Read the full update
+            </Link>
           </article>
         </section>
       ) : null}
@@ -88,6 +91,9 @@ export default function NewsPage() {
                 </div>
                 <h3>{story.title}</h3>
                 <p>{story.excerpt}</p>
+                <Link className="news-read-link news-read-link--dark" href={`/news/${story.slug}`}>
+                  Read the full update
+                </Link>
               </div>
             </article>
           ))}

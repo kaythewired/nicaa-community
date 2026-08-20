@@ -131,8 +131,8 @@ export default function LeadershipPage() {
             </li>
           ))}
         </ol>
-        <Link className="subpage-button subpage-button--text" href="/about#history">
-          Read the community history
+        <Link className="subpage-button subpage-button--text" href="/past-presidents">
+          Meet past presidents
         </Link>
       </section>
 

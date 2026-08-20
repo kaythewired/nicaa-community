@@ -10,7 +10,7 @@ const navigation = [
   { href: "/leadership", label: "Leadership" },
   { href: "/unions", label: "Town unions" },
   { href: "/news", label: "News" },
-  { href: "/resources", label: "Resources" },
+  { href: "/resources", label: "Archive" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
