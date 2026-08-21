@@ -9,24 +9,28 @@ const slides = [
     alt: "The flags of Angola and Nigeria standing side by side",
     eyebrow: "Welcome to NICAA",
     title: "Peace, unity and progress.",
+    objectPosition: "center center",
   },
   {
     image: "/media/news-foundation.avif",
     alt: "NICAA members at the community building foundation ceremony",
     eyebrow: "Building our future",
     title: "A permanent home begins.",
+    objectPosition: "center 20%",
   },
   {
     image: "/media/news-senate.avif",
     alt: "A Nigerian community reception in Angola",
     eyebrow: "Community and connection",
     title: "Welcoming Nigeria in Angola.",
+    objectPosition: "center 18%",
   },
   {
     image: "/media/news-kilamba.avif",
     alt: "NICAA representatives meeting local partners in Angola",
     eyebrow: "Working together",
     title: "Strong local partnerships.",
+    objectPosition: "center 22%",
   },
 ];
 
@@ -74,6 +78,7 @@ export function WelcomeCarousel() {
               height={1000}
               sizes="(max-width: 900px) 100vw, 49vw"
               priority={index === 0}
+              style={{ objectPosition: slide.objectPosition }}
             />
           </figure>
         ))}
