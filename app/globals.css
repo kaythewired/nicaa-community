@@ -1031,3 +1031,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nicaa-home__news-list small, .nicaa-home__news-list b { display: none; }
   .nicaa-home__news-list h3 { font-size: 18px; }
 }
+
+/* Full-width welcome carousel */
+.nicaa-home__hero { min-height: min(780px, calc(100svh - 86px)); background: #0c4d30; isolation: isolate; }
+.nicaa-home__hero::before { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(5,42,25,.88) 0%, rgba(5,42,25,.74) 43%, rgba(5,42,25,.22) 72%, rgba(5,42,25,.32) 100%); content: ""; pointer-events: none; }
+.nicaa-home__hero::after { z-index: 4; pointer-events: none; }
+.nicaa-home__hero-layout { display: block; min-height: min(780px, calc(100svh - 86px)); padding: clamp(74px, 10vw, 142px) 0 clamp(88px, 11vw, 150px); }
+.nicaa-home__hero .nicaa-home__hero-copy { position: relative; z-index: 3; max-width: 660px; }
+.nicaa-home__hero .nicaa-welcome-carousel { position: absolute; z-index: 0; inset: 0; width: 100%; min-height: 100%; box-shadow: none; }
+.nicaa-home__hero .nicaa-welcome-carousel__caption { right: max(40px, calc((100vw - 1440px) / 2)); bottom: 78px; left: auto; width: min(390px, 32vw); }
+.nicaa-home__hero .nicaa-welcome-carousel__controls { right: max(40px, calc((100vw - 1440px) / 2)); bottom: 26px; left: auto; width: min(390px, 32vw); }
+
+@media (max-width: 900px) {
+  .nicaa-home__hero, .nicaa-home__hero-layout { min-height: 680px; }
+  .nicaa-home__hero::before { background: linear-gradient(90deg, rgba(5,42,25,.88), rgba(5,42,25,.55)); }
+  .nicaa-home__hero .nicaa-welcome-carousel__caption { right: 40px; left: auto; width: min(380px, 47vw); }
+  .nicaa-home__hero .nicaa-welcome-carousel__controls { right: 40px; left: auto; width: min(380px, 47vw); }
+}
+
+@media (max-width: 640px) {
+  .nicaa-home__hero, .nicaa-home__hero-layout { min-height: 650px; }
+  .nicaa-home__hero-layout { padding: 58px 0 92px; }
+  .nicaa-home__hero::before { background: linear-gradient(180deg, rgba(5,42,25,.86) 0%, rgba(5,42,25,.68) 63%, rgba(5,42,25,.42) 100%); }
+  .nicaa-home__hero .nicaa-home__hero-copy { max-width: 100%; }
+  .nicaa-home__hero .nicaa-welcome-carousel__caption { right: 16px; bottom: 68px; left: 16px; width: auto; }
+  .nicaa-home__hero .nicaa-welcome-carousel__controls { right: 16px; bottom: 17px; left: 16px; width: auto; }
+}
