@@ -876,3 +876,141 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .news-article-body { width: calc(100% - 32px); }
   .news-article-body aside { grid-template-columns: 1fr; gap: 10px; }
 }
+
+/* NICAA home: civic, member-first landing page */
+.nicaa-home { background: #fbfaf6; color: #173126; }
+.nicaa-home h1, .nicaa-home h2, .nicaa-home h3 { font-family: var(--sans); font-weight: 800; letter-spacing: -.045em; }
+.nicaa-home__hero { position: relative; overflow: hidden; background: #0c4d30; color: white; }
+.nicaa-home__hero::after { position: absolute; right: 0; bottom: 0; left: 0; height: 8px; background: linear-gradient(90deg, #0a7339 0 48%, #f0ece1 48% 52%, #c74934 52% 100%); content: ""; }
+.nicaa-home__hero-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(410px, .83fr); gap: clamp(44px, 7vw, 116px); align-items: center; min-height: 650px; padding: clamp(66px, 9vw, 126px) 0 clamp(74px, 9vw, 116px); }
+.nicaa-home__hero-copy { max-width: 670px; }
+.nicaa-home__eyebrow, .nicaa-home__location { margin: 0; font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.nicaa-home__eyebrow { color: #f4c956; }
+.nicaa-home__location { margin-top: 9px; color: rgba(255,255,255,.7); }
+.nicaa-home__hero h1 { max-width: 650px; margin: 36px 0 25px; font-size: clamp(53px, 6.35vw, 104px); line-height: .91; }
+.nicaa-home__intro { max-width: 555px; margin: 0; color: rgba(255,255,255,.78); font-size: 17px; line-height: 1.78; }
+.nicaa-home__hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
+.nicaa-home__button { display: inline-flex; min-height: 51px; align-items: center; justify-content: center; gap: 22px; padding: 0 21px; border: 1px solid transparent; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-align: center; text-transform: uppercase; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.nicaa-home__button:hover { transform: translateY(-3px); }
+.nicaa-home__button--gold { background: #f4c956; color: #163126; }
+.nicaa-home__button--gold:hover { background: #ffe291; }
+.nicaa-home__button--outline { border-color: rgba(255,255,255,.7); color: white; }
+.nicaa-home__button--outline:hover { border-color: white; background: white; color: #0c4d30; }
+.nicaa-home__button--green { background: #0c4d30; color: white; }
+.nicaa-home__button--green:hover { background: #166d45; }
+.nicaa-home__hero-image { position: relative; min-height: 493px; overflow: hidden; background: #143828; box-shadow: 18px 18px 0 rgba(244,201,86,.92); }
+.nicaa-home__hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.nicaa-home__hero-image::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5,27,16,.7)); content: ""; pointer-events: none; }
+.nicaa-home__hero-image figcaption { position: absolute; z-index: 1; right: 28px; bottom: 24px; left: 28px; display: flex; align-items: baseline; justify-content: space-between; gap: 14px; color: white; }
+.nicaa-home__hero-image figcaption span { color: #f4c956; font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.nicaa-home__hero-image figcaption strong { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+
+.nicaa-home__welcome { padding: clamp(78px, 10vw, 145px) 0 clamp(45px, 6vw, 78px); background: #fbfaf6; }
+.nicaa-home__welcome-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(250px, .55fr); gap: clamp(25px, 4vw, 66px); align-items: start; }
+.nicaa-home__section-label { margin: 0; color: #0b6640; font-size: 10px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+.nicaa-home__section-label::before { display: inline-block; width: 23px; height: 2px; margin: 0 9px 3px 0; background: currentColor; content: ""; vertical-align: middle; }
+.nicaa-home__section-label--light { color: #f4c956; }
+.nicaa-home__welcome h2, .nicaa-home__purpose h2, .nicaa-home__story h2, .nicaa-home__unions h2, .nicaa-home__section-heading h2, .nicaa-home__news h2, .nicaa-home__contact h2 { margin: 0; font-size: clamp(35px, 4.15vw, 68px); line-height: .98; }
+.nicaa-home__welcome-grid > p:last-child { max-width: 410px; margin: 2px 0 0; color: rgba(23,49,38,.7); line-height: 1.78; }
+.nicaa-home__action-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(52px, 7vw, 94px); border-top: 1px solid rgba(23,49,38,.17); border-left: 1px solid rgba(23,49,38,.17); }
+.nicaa-home__action-grid a { position: relative; display: grid; min-height: 260px; align-content: start; padding: clamp(25px, 3vw, 44px); border-right: 1px solid rgba(23,49,38,.17); border-bottom: 1px solid rgba(23,49,38,.17); transition: background .2s ease, color .2s ease; }
+.nicaa-home__action-grid a:hover { background: #0c4d30; color: white; }
+.nicaa-home__action-grid span { color: #bd583e; font-size: 11px; font-weight: 900; letter-spacing: .1em; }
+.nicaa-home__action-grid a:hover span { color: #f4c956; }
+.nicaa-home__action-grid strong { max-width: 220px; margin: 52px 0 14px; font-size: 24px; letter-spacing: -.035em; line-height: 1.05; }
+.nicaa-home__action-grid small { max-width: 260px; color: rgba(23,49,38,.68); font-size: 13px; line-height: 1.65; }
+.nicaa-home__action-grid a:hover small { color: rgba(255,255,255,.75); }
+.nicaa-home__action-grid b { position: absolute; right: 31px; bottom: 27px; color: #0b6640; font-size: 22px; font-weight: 400; }
+.nicaa-home__action-grid a:hover b { color: #f4c956; }
+
+.nicaa-home__purpose { padding: clamp(78px, 11vw, 152px) 0; background: #092f20; color: white; }
+.nicaa-home__purpose-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(420px, 1fr); gap: clamp(58px, 9vw, 155px); align-items: start; }
+.nicaa-home__purpose h2 { max-width: 575px; margin-top: 27px; }
+.nicaa-home__purpose-layout > div:first-child > p:not(.nicaa-home__section-label) { max-width: 520px; margin: 28px 0; color: rgba(255,255,255,.72); line-height: 1.78; }
+.nicaa-home__text-link { display: inline-flex; align-items: center; gap: 13px; padding-bottom: 7px; border-bottom: 1px solid currentColor; color: #f4c956; font-size: 10px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; transition: gap .2s ease; }
+.nicaa-home__text-link:hover { gap: 21px; }
+.nicaa-home__text-link--dark { color: #0b6640; }
+.nicaa-home__purpose-list { border-top: 1px solid rgba(255,255,255,.24); }
+.nicaa-home__purpose-list article { display: grid; grid-template-columns: 42px 1fr; gap: 21px; padding: 25px 0 26px; border-bottom: 1px solid rgba(255,255,255,.24); }
+.nicaa-home__purpose-list span { color: #f4c956; font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+.nicaa-home__purpose-list h3 { margin: 0 0 8px; font-size: 22px; }
+.nicaa-home__purpose-list p { max-width: 520px; margin: 0; color: rgba(255,255,255,.67); font-size: 14px; line-height: 1.65; }
+
+.nicaa-home__story { padding: clamp(78px, 10vw, 144px) 0; background: #edf2e9; }
+.nicaa-home__story-layout { display: grid; grid-template-columns: minmax(0, .7fr) minmax(450px, 1fr); gap: clamp(57px, 10vw, 160px); align-items: start; }
+.nicaa-home__story h2 { max-width: 530px; margin-top: 25px; }
+.nicaa-home__story-copy > p:not(.nicaa-home__section-label) { max-width: 495px; margin: 28px 0 33px; color: rgba(23,49,38,.72); line-height: 1.78; }
+.nicaa-home__milestones { border-top: 1px solid rgba(23,49,38,.2); }
+.nicaa-home__milestones article { display: grid; grid-template-columns: 75px 1fr; gap: 22px; padding: 24px 0; border-bottom: 1px solid rgba(23,49,38,.2); }
+.nicaa-home__milestones time { color: #bd583e; font-size: 15px; font-weight: 900; letter-spacing: .04em; }
+.nicaa-home__milestones h3 { margin: 0 0 8px; font-size: 20px; }
+.nicaa-home__milestones p { max-width: 520px; margin: 0; color: rgba(23,49,38,.67); font-size: 14px; line-height: 1.65; }
+
+.nicaa-home__unions { padding: clamp(78px, 10vw, 136px) 0; background: #102b1e; color: white; }
+.nicaa-home__unions-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(400px, 1fr); gap: clamp(48px, 8vw, 132px); align-items: center; }
+.nicaa-home__unions h2 { max-width: 510px; margin: 26px 0; }
+.nicaa-home__unions-layout > div:first-child > p:not(.nicaa-home__section-label) { max-width: 530px; margin: 0 0 32px; color: rgba(255,255,255,.72); line-height: 1.75; }
+.nicaa-home__union-names { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; padding: clamp(25px, 4vw, 45px); border: 1px solid rgba(255,255,255,.24); background: rgba(255,255,255,.035); }
+.nicaa-home__union-names span { padding: 10px 11px; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.84); font-size: 10px; font-weight: 800; letter-spacing: .055em; line-height: 1.2; text-transform: uppercase; }
+
+.nicaa-home__leadership { padding: clamp(78px, 10vw, 140px) 0; background: #fff; }
+.nicaa-home__section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 47px; }
+.nicaa-home__section-heading h2 { margin-top: 22px; }
+.nicaa-home__leaders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(15px, 2vw, 27px); }
+.nicaa-home__leaders-grid article { overflow: hidden; background: #e8eee7; }
+.nicaa-home__leaders-grid img { width: 100%; height: clamp(340px, 33vw, 500px); object-fit: cover; object-position: center top; filter: saturate(.92); transition: filter .25s ease, transform .45s ease; }
+.nicaa-home__leaders-grid article:hover img { filter: saturate(1); transform: scale(1.025); }
+.nicaa-home__leaders-grid article > div { padding: 22px 23px 25px; border-top: 4px solid #0c4d30; background: #fbfaf6; }
+.nicaa-home__leaders-grid p { margin: 0 0 7px; color: #bd583e; font-size: 9px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.nicaa-home__leaders-grid h3 { margin: 0; font-size: clamp(21px, 2vw, 30px); line-height: 1.06; }
+
+.nicaa-home__news { padding: clamp(78px, 10vw, 140px) 0; background: #f1ede3; }
+.nicaa-home__news-layout { display: grid; grid-template-columns: minmax(250px, .58fr) minmax(0, 1fr); gap: clamp(48px, 9vw, 150px); }
+.nicaa-home__news h2 { margin: 25px 0 30px; }
+.nicaa-home__news-list { border-top: 1px solid rgba(23,49,38,.22); }
+.nicaa-home__news-list a { position: relative; display: grid; grid-template-columns: 155px minmax(0, 1fr) 22px; gap: 21px; align-items: center; padding: 19px 0; border-bottom: 1px solid rgba(23,49,38,.22); transition: padding .2s ease; }
+.nicaa-home__news-list a:hover { padding-right: 8px; padding-left: 8px; background: rgba(255,255,255,.44); }
+.nicaa-home__news-list img { width: 155px; height: 104px; object-fit: cover; background: #dae2d8; }
+.nicaa-home__news-list p { display: flex; flex-wrap: wrap; gap: 8px 13px; margin: 0 0 9px; color: #bd583e; font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.nicaa-home__news-list time { color: rgba(23,49,38,.58); }
+.nicaa-home__news-list h3 { margin: 0 0 8px; font-size: clamp(19px, 2vw, 25px); line-height: 1.08; }
+.nicaa-home__news-list small { display: block; color: rgba(23,49,38,.64); font-size: 13px; line-height: 1.55; }
+.nicaa-home__news-list b { color: #0b6640; font-size: 22px; font-weight: 400; }
+
+.nicaa-home__contact { padding: clamp(72px, 9vw, 120px) 0; background: #f4c956; }
+.nicaa-home__contact-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(300px, .65fr); gap: clamp(50px, 10vw, 180px); align-items: end; }
+.nicaa-home__contact h2 { max-width: 620px; margin-top: 25px; }
+.nicaa-home__contact-layout > div:last-child > p { max-width: 440px; margin: 0 0 29px; color: rgba(23,49,38,.78); line-height: 1.75; }
+
+@media (max-width: 900px) {
+  .nicaa-home__hero-layout, .nicaa-home__purpose-layout, .nicaa-home__story-layout, .nicaa-home__unions-layout, .nicaa-home__news-layout, .nicaa-home__contact-layout { grid-template-columns: 1fr; }
+  .nicaa-home__hero-layout { gap: 52px; min-height: 0; }
+  .nicaa-home__hero-image { width: min(670px, 100%); min-height: 445px; }
+  .nicaa-home__welcome-grid { grid-template-columns: 130px 1fr; }
+  .nicaa-home__welcome-grid > p:last-child { grid-column: 2; }
+  .nicaa-home__purpose-layout, .nicaa-home__story-layout, .nicaa-home__unions-layout, .nicaa-home__news-layout, .nicaa-home__contact-layout { gap: 50px; }
+  .nicaa-home__section-heading { align-items: start; flex-direction: column; }
+}
+
+@media (max-width: 640px) {
+  .nicaa-home__hero-layout { padding: 60px 0 76px; }
+  .nicaa-home__hero h1 { margin: 30px 0 20px; font-size: clamp(46px, 13.7vw, 66px); }
+  .nicaa-home__intro { font-size: 15px; }
+  .nicaa-home__hero-actions { align-items: stretch; flex-direction: column; margin-top: 31px; }
+  .nicaa-home__hero-image { min-height: 320px; box-shadow: 10px 10px 0 #f4c956; }
+  .nicaa-home__hero-image figcaption { right: 17px; bottom: 15px; left: 17px; align-items: start; flex-direction: column; gap: 4px; }
+  .nicaa-home__welcome-grid { grid-template-columns: 1fr; gap: 20px; }
+  .nicaa-home__welcome-grid > p:last-child { grid-column: auto; }
+  .nicaa-home__action-grid, .nicaa-home__leaders-grid { grid-template-columns: 1fr; }
+  .nicaa-home__action-grid a { min-height: 215px; }
+  .nicaa-home__action-grid strong { margin-top: 35px; }
+  .nicaa-home__purpose-list article { grid-template-columns: 31px 1fr; gap: 13px; }
+  .nicaa-home__milestones article { grid-template-columns: 58px 1fr; gap: 14px; }
+  .nicaa-home__union-names { padding: 19px; gap: 7px; }
+  .nicaa-home__union-names span { font-size: 8px; }
+  .nicaa-home__leaders-grid img { height: 390px; }
+  .nicaa-home__news-list a { grid-template-columns: 105px minmax(0, 1fr); gap: 14px; }
+  .nicaa-home__news-list img { width: 105px; height: 90px; }
+  .nicaa-home__news-list small, .nicaa-home__news-list b { display: none; }
+  .nicaa-home__news-list h3 { font-size: 18px; }
+}
