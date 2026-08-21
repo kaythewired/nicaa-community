@@ -1057,3 +1057,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nicaa-home__hero .nicaa-welcome-carousel__caption { right: 16px; bottom: 68px; left: 16px; width: auto; }
   .nicaa-home__hero .nicaa-welcome-carousel__controls { right: 16px; bottom: 17px; left: 16px; width: auto; }
 }
+
+/* Shared page-heading legibility */
+.page-hero h1, .subpage-hero h1, .news-article-hero h1 {
+  max-width: 15ch;
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: .98;
+  text-align: start;
+  text-wrap: balance;
+}
+.page-hero h1, .subpage-hero h1 { font-size: clamp(52px, 6.3vw, 102px); }
+.news-article-hero h1 { max-width: 17ch; font-size: clamp(48px, 5.7vw, 92px); }
+.nicaa-home__hero h1 { letter-spacing: -.04em; line-height: 1; text-wrap: balance; }
+
+@media (max-width: 640px) {
+  .page-hero h1, .subpage-hero h1, .news-article-hero h1 { max-width: 100%; font-size: clamp(42px, 12.5vw, 62px); line-height: 1.02; }
+}
