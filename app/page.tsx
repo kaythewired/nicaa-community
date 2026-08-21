@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { WelcomeCarousel } from "./_components/WelcomeCarousel";
 import { historyTimeline, leaders, newsItems, objectives, townUnions } from "./_data/community";
 
 export const metadata: Metadata = {
@@ -35,20 +36,7 @@ export default function Home() {
             </div>
           </div>
 
-          <figure className="nicaa-home__hero-image">
-            <Image
-              src="/media/community-hero.avif"
-              alt="The flags of Angola and Nigeria standing side by side"
-              width={1500}
-              height={1000}
-              sizes="(max-width: 900px) 100vw, 49vw"
-              priority
-            />
-            <figcaption>
-              <span>Our motto</span>
-              <strong>Peace · Unity · Progress</strong>
-            </figcaption>
-          </figure>
+          <WelcomeCarousel />
         </div>
       </section>
 

@@ -904,12 +904,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nicaa-home__button--outline:hover { border-color: white; background: white; color: #0c4d30; }
 .nicaa-home__button--green { background: #0c4d30; color: white; }
 .nicaa-home__button--green:hover { background: #166d45; }
-.nicaa-home__hero-image { position: relative; min-height: 493px; overflow: hidden; background: #143828; box-shadow: 18px 18px 0 rgba(244,201,86,.92); }
-.nicaa-home__hero-image img { width: 100%; height: 100%; object-fit: cover; }
-.nicaa-home__hero-image::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5,27,16,.7)); content: ""; pointer-events: none; }
-.nicaa-home__hero-image figcaption { position: absolute; z-index: 1; right: 28px; bottom: 24px; left: 28px; display: flex; align-items: baseline; justify-content: space-between; gap: 14px; color: white; }
-.nicaa-home__hero-image figcaption span { color: #f4c956; font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.nicaa-home__hero-image figcaption strong { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+.nicaa-welcome-carousel { position: relative; min-height: 493px; overflow: hidden; background: #143828; box-shadow: 18px 18px 0 rgba(244,201,86,.92); }
+.nicaa-welcome-carousel__slides, .nicaa-welcome-carousel__slide { position: absolute; inset: 0; }
+.nicaa-welcome-carousel__slide { margin: 0; opacity: 0; transition: opacity .65s ease; }
+.nicaa-welcome-carousel__slide--active { opacity: 1; }
+.nicaa-welcome-carousel__slide::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 44%, rgba(5,27,16,.74)); content: ""; pointer-events: none; }
+.nicaa-welcome-carousel__slide img { width: 100%; height: 100%; object-fit: cover; }
+.nicaa-welcome-carousel__caption { position: absolute; z-index: 1; right: 28px; bottom: 77px; left: 28px; color: white; }
+.nicaa-welcome-carousel__caption p { margin: 0 0 7px; color: #f4c956; font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.nicaa-welcome-carousel__caption strong { display: block; max-width: 350px; font-size: clamp(21px, 2.3vw, 32px); letter-spacing: -.035em; line-height: 1.05; }
+.nicaa-welcome-carousel__controls { position: absolute; z-index: 2; right: 24px; bottom: 21px; left: 24px; display: grid; grid-template-columns: 32px 1fr 32px; gap: 12px; align-items: center; }
+.nicaa-welcome-carousel__controls > button { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.76); border-radius: 50%; background: rgba(12,77,48,.45); color: white; font-size: 17px; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.nicaa-welcome-carousel__controls > button:hover { border-color: #f4c956; background: #f4c956; color: #173126; }
+.nicaa-welcome-carousel__dots { display: flex; justify-content: center; gap: 8px; }
+.nicaa-welcome-carousel__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.52); cursor: pointer; transition: width .2s ease, border-radius .2s ease, background .2s ease; }
+.nicaa-welcome-carousel__dots button.nicaa-welcome-carousel__dot--active { width: 24px; border-radius: 20px; background: #f4c956; }
 
 .nicaa-home__welcome { padding: clamp(78px, 10vw, 145px) 0 clamp(45px, 6vw, 78px); background: #fbfaf6; }
 .nicaa-home__welcome-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(250px, .55fr); gap: clamp(25px, 4vw, 66px); align-items: start; }
@@ -991,7 +1000,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 900px) {
   .nicaa-home__hero-layout, .nicaa-home__purpose-layout, .nicaa-home__story-layout, .nicaa-home__unions-layout, .nicaa-home__news-layout, .nicaa-home__contact-layout { grid-template-columns: 1fr; }
   .nicaa-home__hero-layout { gap: 52px; min-height: 0; }
-  .nicaa-home__hero-image { width: min(670px, 100%); min-height: 445px; }
+  .nicaa-welcome-carousel { width: min(670px, 100%); min-height: 445px; }
   .nicaa-home__welcome-grid { grid-template-columns: 130px 1fr; }
   .nicaa-home__welcome-grid > p:last-child { grid-column: 2; }
   .nicaa-home__purpose-layout, .nicaa-home__story-layout, .nicaa-home__unions-layout, .nicaa-home__news-layout, .nicaa-home__contact-layout { gap: 50px; }
@@ -1003,8 +1012,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nicaa-home__hero h1 { margin: 30px 0 20px; font-size: clamp(46px, 13.7vw, 66px); }
   .nicaa-home__intro { font-size: 15px; }
   .nicaa-home__hero-actions { align-items: stretch; flex-direction: column; margin-top: 31px; }
-  .nicaa-home__hero-image { min-height: 320px; box-shadow: 10px 10px 0 #f4c956; }
-  .nicaa-home__hero-image figcaption { right: 17px; bottom: 15px; left: 17px; align-items: start; flex-direction: column; gap: 4px; }
+  .nicaa-welcome-carousel { min-height: 320px; box-shadow: 10px 10px 0 #f4c956; }
+  .nicaa-welcome-carousel__caption { right: 17px; bottom: 65px; left: 17px; }
+  .nicaa-welcome-carousel__caption strong { font-size: 22px; }
+  .nicaa-welcome-carousel__controls { right: 17px; bottom: 15px; left: 17px; }
   .nicaa-home__welcome-grid { grid-template-columns: 1fr; gap: 20px; }
   .nicaa-home__welcome-grid > p:last-child { grid-column: auto; }
   .nicaa-home__action-grid, .nicaa-home__leaders-grid { grid-template-columns: 1fr; }
