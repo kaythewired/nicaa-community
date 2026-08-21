@@ -255,6 +255,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .union-card-name { display: block; font-family: var(--display); font-size: clamp(18px, 1.8vw, 26px); line-height: .98; letter-spacing: -.04em; }
 .union-card-count { display: block; margin-top: 11px; color: rgba(20,32,25,.53); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .union-card:hover .union-card-count, .union-card[open] .union-card-count { color: rgba(255,255,255,.62); }
+.union-card-match { display: grid; gap: 4px; margin-top: 13px; padding: 10px; border-left: 3px solid var(--gold); background: rgba(11,102,64,.08); }
+.union-card-match > span { color: #0b6640; font-size: 8px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.union-card-match strong { overflow: hidden; color: rgba(20,32,25,.82); font-family: var(--sans); font-size: 11px; font-weight: 800; letter-spacing: 0; line-height: 1.42; text-overflow: ellipsis; }
+.union-card:hover .union-card-match, .union-card[open] .union-card-match { background: rgba(255,255,255,.1); }
+.union-card:hover .union-card-match > span, .union-card[open] .union-card-match > span { color: var(--gold); }
+.union-card:hover .union-card-match strong, .union-card[open] .union-card-match strong { color: rgba(255,255,255,.9); }
 .union-card-arrow { display: grid; width: 24px; height: 24px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 18px; line-height: 1; transition: transform .2s ease; }
 .union-card-arrow::before { content: "+"; }
 .union-card[open] .union-card-arrow { transform: rotate(45deg); }

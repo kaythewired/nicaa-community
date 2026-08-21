@@ -14,6 +14,10 @@ type Roster = {
   members: string[];
 };
 
+type SearchableUnion = TownUnion & Roster & {
+  matchingRecords: string[];
+};
+
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const allLetters = "ALL";
 const officerLine = /^(chairman|vice chairman|secretary|secreatry|assistant secretary|treasurer|financial secretary|provost|president|pro\b)/i;
@@ -58,10 +62,20 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
     [unions],
   );
 
-  const filteredUnions = useMemo(() => {
+  const filteredUnions = useMemo<SearchableUnion[]>(() => {
     const searchTerm = query.trim().toLocaleLowerCase();
 
     return unions
+      .map((union) => {
+        const roster = normaliseRoster(union.roster);
+        const matchingRecords = searchTerm
+          ? [union.name, ...roster.officers, ...roster.members].filter((record) =>
+              record.toLocaleLowerCase().includes(searchTerm),
+            )
+          : [];
+
+        return { ...union, ...roster, matchingRecords };
+      })
       .filter((union) => {
         const matchesLetter =
           selectedLetter === allLetters ||
@@ -73,7 +87,6 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
 
         return matchesLetter && matchesSearch;
       })
-      .map((union) => ({ ...union, ...normaliseRoster(union.roster) }))
       .sort((first, second) => first.name.localeCompare(second.name));
   }, [query, selectedLetter, unions]);
 
@@ -208,6 +221,17 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
                     <span className="union-card-count">
                       {union.members.length} listed {union.members.length === 1 ? "member" : "members"}
                     </span>
+                    {query.trim() && union.matchingRecords.length > 0 ? (
+                      <span className="union-card-match">
+                        <span>Matching public record</span>
+                        <strong>
+                          {union.matchingRecords.slice(0, 2).join(" · ")}
+                          {union.matchingRecords.length > 2
+                            ? ` +${union.matchingRecords.length - 2} more`
+                            : ""}
+                        </strong>
+                      </span>
+                    ) : null}
                   </span>
                   <span className="union-card-arrow" aria-hidden="true" />
                 </summary>
