@@ -164,7 +164,7 @@ export const leaders: Leader[] = [
     image: "/media/leader-06.avif",
   },
   {
-    name: "HonChijioke Ogbonna",
+    name: "Hon. Chijioke Ogbonna",
     role: "Treasurer",
     image: "/media/leader-07.avif",
   },
