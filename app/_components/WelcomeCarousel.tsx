@@ -5,28 +5,28 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    image: "/media/community-hero.avif",
+    image: "/media/carousel-community-enhanced.png",
     alt: "The flags of Angola and Nigeria standing side by side",
     eyebrow: "Welcome to NICAA",
     title: "Peace, unity and progress.",
     objectPosition: "center center",
   },
   {
-    image: "/media/news-foundation.avif",
+    image: "/media/carousel-foundation-enhanced.png",
     alt: "NICAA members at the community building foundation ceremony",
     eyebrow: "Building our future",
     title: "A permanent home begins.",
     objectPosition: "center 20%",
   },
   {
-    image: "/media/news-senate.avif",
+    image: "/media/carousel-senate-enhanced.png",
     alt: "A Nigerian community reception in Angola",
     eyebrow: "Community and connection",
     title: "Welcoming Nigeria in Angola.",
     objectPosition: "center 18%",
   },
   {
-    image: "/media/news-kilamba.avif",
+    image: "/media/carousel-kilamba-enhanced.png",
     alt: "NICAA representatives meeting local partners in Angola",
     eyebrow: "Working together",
     title: "Strong local partnerships.",
