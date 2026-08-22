@@ -921,6 +921,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nicaa-welcome-carousel__dots { display: flex; justify-content: center; gap: 8px; }
 .nicaa-welcome-carousel__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.52); cursor: pointer; transition: width .2s ease, border-radius .2s ease, background .2s ease; }
 .nicaa-welcome-carousel__dots button.nicaa-welcome-carousel__dot--active { width: 24px; border-radius: 20px; background: var(--gold); }
+.nicaa-welcome-carousel__caption, .nicaa-welcome-carousel__controls { display: none; }
 
 .nicaa-home__welcome { padding: clamp(78px, 10vw, 145px) 0 clamp(45px, 6vw, 78px); background: var(--paper); }
 .nicaa-home__welcome-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(250px, .55fr); gap: clamp(25px, 4vw, 66px); align-items: start; }
