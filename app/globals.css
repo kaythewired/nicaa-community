@@ -1008,13 +1008,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nicaa-home__union-names::before { left: 0; background: linear-gradient(90deg, rgba(0,135,81,.94), transparent); }
 .nicaa-home__union-names::after { right: 0; background: linear-gradient(270deg, rgba(0,135,81,.94), transparent); }
 .nicaa-home__union-count { position: relative; z-index: 3; margin: 0; padding: 0 clamp(25px, 4vw, 45px); color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
-.nicaa-home__union-tickers { display: grid; gap: 11px; }
+.nicaa-home__union-tickers { display: grid; gap: 13px; }
 .nicaa-home__union-ticker-row { overflow: hidden; }
-.nicaa-home__union-ticker-track { display: flex; width: max-content; gap: 10px; animation: nicaa-union-scroll-left 36s linear infinite; will-change: transform; }
+.nicaa-home__union-ticker-track { display: flex; width: max-content; gap: 12px; animation: nicaa-union-scroll-left 36s linear infinite; will-change: transform; }
 .nicaa-home__union-ticker-row:nth-child(2) .nicaa-home__union-ticker-track { animation-name: nicaa-union-scroll-right; animation-duration: 43s; }
 .nicaa-home__union-ticker-row:nth-child(3) .nicaa-home__union-ticker-track { animation-duration: 39s; }
 .nicaa-home__union-names:hover .nicaa-home__union-ticker-track { animation-play-state: paused; }
-.nicaa-home__union-ticker-track span { flex: 0 0 auto; padding: 10px 11px; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.84); font-size: 10px; font-weight: 800; letter-spacing: .055em; line-height: 1.2; text-transform: uppercase; }
+.nicaa-home__union-ticker-track span { flex: 0 0 auto; padding: 13px 15px; border: 1px solid rgba(255,255,255,.24); color: white; font-size: clamp(12px, .8vw, 15px); font-weight: 900; letter-spacing: .04em; line-height: 1.12; text-transform: uppercase; }
 @keyframes nicaa-union-scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes nicaa-union-scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (prefers-reduced-motion: reduce) { .nicaa-home__union-ticker-track { animation: none; } }
@@ -1076,8 +1076,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nicaa-home__milestones article { grid-template-columns: 58px 1fr; gap: 14px; }
   .nicaa-home__union-names { min-height: 260px; gap: 17px; padding: 24px 0; }
   .nicaa-home__union-count { padding: 0 19px; }
-  .nicaa-home__union-tickers { gap: 7px; }
-  .nicaa-home__union-ticker-track span { font-size: 8px; }
+  .nicaa-home__union-tickers { gap: 9px; }
+  .nicaa-home__union-ticker-track { gap: 9px; }
+  .nicaa-home__union-ticker-track span { padding: 10px 11px; font-size: 10px; }
   .nicaa-home__leaders-grid img { height: 390px; }
   .nicaa-home__news-list a { grid-template-columns: 105px minmax(0, 1fr); gap: 14px; }
   .nicaa-home__news-list img { width: 105px; height: 90px; }
