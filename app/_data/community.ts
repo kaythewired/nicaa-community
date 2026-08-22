@@ -135,7 +135,7 @@ export const leaders: Leader[] = [
   {
     name: "Comr. Ogbuka Obinna",
     role: "President",
-    image: "/media/leader-01.avif",
+    image: "/media/leader-01-enhanced.png",
     summary: "Leading the community’s work to unite, represent, and support Nigerians across Angola.",
   },
   {
@@ -146,47 +146,47 @@ export const leaders: Leader[] = [
   {
     name: "Hon. Ofoedu Chukwuma Anthony",
     role: "Secretary General",
-    image: "/media/leader-03.avif",
+    image: "/media/leader-03-enhanced.png",
   },
   {
     name: "Hon. Obiwuaku Chukwudi C.",
     role: "Assistant Secretary General",
-    image: "/media/leader-04.avif",
+    image: "/media/leader-04-enhanced.png",
   },
   {
     name: "Hon. Ifenweobi Onyeka Emmanuel",
     role: "Financial Secretary",
-    image: "/media/leader-05.avif",
+    image: "/media/leader-05-enhanced.png",
   },
   {
     name: "Hon Odonweze Valentine",
     role: "Assistant Financial Secretary",
-    image: "/media/leader-06.avif",
+    image: "/media/leader-06-enhanced.png",
   },
   {
     name: "Hon. Chijioke Ogbonna",
     role: "Treasurer",
-    image: "/media/leader-07.avif",
+    image: "/media/leader-07-enhanced.png",
   },
   {
     name: "Hon. Chika Michael G.",
     role: "Public Relations Officer",
-    image: "/media/leader-08.avif",
+    image: "/media/leader-08-enhanced.png",
   },
   {
     name: "Hon. Babatunde Onabowale Onafowope",
     role: "Assistant Public Relations Officer",
-    image: "/media/leader-09.avif",
+    image: "/media/leader-09-enhanced.png",
   },
   {
     name: "Hon. Uruchukwu Obinna",
     role: "Provost I",
-    image: "/media/leader-10.avif",
+    image: "/media/leader-10-enhanced.png",
   },
   {
     name: "Hon. Ude Okwudiri",
     role: "Provost II",
-    image: "/media/leader-11.avif",
+    image: "/media/leader-11-enhanced.png",
   },
 ];
 
