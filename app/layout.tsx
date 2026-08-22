@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const viewport: Viewport = { themeColor: "#0b4d2b", colorScheme: "light" };
+export const viewport: Viewport = { themeColor: "#008751", colorScheme: "light" };
 
 const communitySchema = {
   "@context": "https://schema.org",
