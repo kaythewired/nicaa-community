@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 export default function Home() {
   const featuredLeaders = leaders.slice(0, 3);
   const featuredNews = newsItems.slice(0, 3);
+  const unionTickerRows = Array.from({ length: 3 }, (_, rowIndex) =>
+    townUnions.filter((_, unionIndex) => unionIndex % 3 === rowIndex),
+  );
 
   return (
     <main id="main-content" className="nicaa-home">
@@ -125,8 +128,19 @@ export default function Home() {
             <p>Our town unions are the local heart of NICAA. Find yours by name, browse A–Z, and view the public contacts available for each union.</p>
             <Link className="nicaa-home__button nicaa-home__button--gold" href="/unions">Open the union directory <span aria-hidden="true">→</span></Link>
           </div>
-          <div className="nicaa-home__union-names" aria-label="Examples of registered town unions">
-            {townUnions.slice(0, 12).map((union) => <span key={union.name}>{union.name}</span>)}
+          <div className="nicaa-home__union-names" aria-label="A scrolling selection of NICAA town unions">
+            <p className="nicaa-home__union-count">{townUnions.length} registered town unions</p>
+            <div className="nicaa-home__union-tickers" aria-hidden="true">
+              {unionTickerRows.map((row, rowIndex) => (
+                <div className="nicaa-home__union-ticker-row" key={rowIndex}>
+                  <div className="nicaa-home__union-ticker-track">
+                    {[...row, ...row].map((union, index) => (
+                      <span key={`${union.slug}-${index}`}>{union.name}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
