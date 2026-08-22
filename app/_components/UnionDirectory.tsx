@@ -15,6 +15,7 @@ type Roster = {
 };
 
 type SearchableUnion = TownUnion & Roster & {
+  memberCount: number;
   matchingRecords: string[];
 };
 
@@ -74,7 +75,12 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
             )
           : [];
 
-        return { ...union, ...roster, matchingRecords };
+        return {
+          ...union,
+          ...roster,
+          memberCount: roster.members.length,
+          matchingRecords,
+        };
       })
       .filter((union) => {
         const matchesLetter =
@@ -92,6 +98,10 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
 
   const hasActiveFilters = query.length > 0 || selectedLetter !== allLetters;
   const resultCount = filteredUnions.length;
+  const visibleMemberCount = filteredUnions.reduce(
+    (total, union) => total + union.memberCount,
+    0,
+  );
   const resultLabel = `${resultCount} ${
     resultCount === 1 ? "town union" : "town unions"
   } shown${selectedLetter === allLetters ? "" : ` under ${selectedLetter}`}${
@@ -190,15 +200,20 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
       </div>
 
       <div className="union-results-heading">
-        <p
-          id={statusId}
-          className="union-results-status"
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          {resultLabel}
-        </p>
+        <div className="union-results-copy">
+          <p
+            id={statusId}
+            className="union-results-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {resultLabel}
+          </p>
+          <p className="union-results-members">
+            <strong>{visibleMemberCount.toLocaleString()}</strong> listed public {visibleMemberCount === 1 ? "member" : "members"} in this view
+          </p>
+        </div>
         {hasActiveFilters && (
           <button className="union-results-reset" type="button" onClick={clearFilters}>
             Reset directory
@@ -219,7 +234,7 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
                     <span className="union-card-label">Town union roster</span>
                     <strong className="union-card-name">{union.name}</strong>
                     <span className="union-card-count">
-                      {union.members.length} listed {union.members.length === 1 ? "member" : "members"}
+                      {union.memberCount} listed {union.memberCount === 1 ? "member" : "members"}
                     </span>
                     {query.trim() && union.matchingRecords.length > 0 ? (
                       <span className="union-card-match">
