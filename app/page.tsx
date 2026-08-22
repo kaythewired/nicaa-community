@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- Portrait AVIFs are served directly to preserve reliable hosting behaviour. */
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { WelcomeCarousel } from "./_components/WelcomeCarousel";
 import { historyTimeline, leaders, newsItems, objectives, townUnions } from "./_data/community";
@@ -165,7 +164,16 @@ export default function Home() {
           <div className="nicaa-home__news-list">
             {featuredNews.map((item) => (
               <Link href={`/news/${item.slug}`} key={item.slug}>
-                <Image src={item.image} alt="" width={280} height={190} sizes="(max-width: 640px) 110px, 180px" />
+                {/* The published AVIF files are served directly to avoid the unavailable image optimisation route. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.image}
+                  alt=""
+                  width={280}
+                  height={190}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div>
                   <p><span>{item.category}</span><time>{item.date}</time></p>
                   <h3>{item.title}</h3>

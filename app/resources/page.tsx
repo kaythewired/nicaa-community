@@ -119,6 +119,7 @@ export default function ResourcesPage() {
         <figure className="resource-archive__image">
           <Image
             src="/media/ambassador-archive.avif"
+            unoptimized
             alt="Archival portrait from NICAA's record of Nigeria–Angola diplomatic engagement"
             width={900}
             height={1100}

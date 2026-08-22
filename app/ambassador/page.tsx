@@ -24,6 +24,7 @@ export default function AmbassadorPage() {
         <figure className="subpage-hero__media ambassador-hero__portrait">
           <Image
             src="/media/ambassador-archive.avif"
+            unoptimized
             alt="Archival portrait of Professor Mrs. Monique Ekpong"
             width={900}
             height={1100}

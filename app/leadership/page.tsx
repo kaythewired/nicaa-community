@@ -55,6 +55,7 @@ export default function LeadershipPage() {
           <figure className="leadership-feature__portrait">
             <Image
               src={featuredLeader.image}
+              unoptimized
               alt={"Portrait of " + featuredLeader.name + ", " + featuredLeader.role}
               width={900}
               height={1100}
@@ -99,6 +100,7 @@ export default function LeadershipPage() {
               <figure className="leadership-card__portrait">
                 <Image
                   src={leader.image}
+                  unoptimized
                   alt={"Portrait of " + leader.name + ", " + leader.role}
                   width={700}
                   height={840}

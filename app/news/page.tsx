@@ -42,6 +42,7 @@ export default function NewsPage() {
           <figure className="news-feature__image">
             <Image
               src={featuredStory.image}
+              unoptimized
               alt=""
               width={1500}
               height={1000}
@@ -78,6 +79,7 @@ export default function NewsPage() {
               <figure className="news-card__image">
                 <Image
                   src={story.image}
+                  unoptimized
                   alt=""
                   width={900}
                   height={680}

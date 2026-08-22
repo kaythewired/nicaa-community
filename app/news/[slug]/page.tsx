@@ -71,6 +71,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
           <figure>
             <Image
               src={story.image}
+              unoptimized
               alt=""
               width={1400}
               height={1050}

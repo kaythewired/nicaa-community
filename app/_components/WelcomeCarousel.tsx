@@ -73,6 +73,7 @@ export function WelcomeCarousel() {
           >
             <Image
               src={slide.image}
+              unoptimized
               alt={index === activeIndex ? slide.alt : ""}
               width={1500}
               height={1000}

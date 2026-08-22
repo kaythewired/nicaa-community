@@ -45,6 +45,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         <figure className="contact-hero__mark">
           <Image
             src="/media/nicaa-mark.avif"
+            unoptimized
             alt="Nigerian Community in Angola emblem"
             width={640}
             height={640}

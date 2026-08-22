@@ -38,6 +38,7 @@ export default function AboutPage() {
         <figure className="subpage-hero__media page-about__portrait">
           <Image
             src="/media/news-foundation.avif"
+            unoptimized
             alt="Members of the Nigerian community gathered together in Angola"
             width={1400}
             height={1050}

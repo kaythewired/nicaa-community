@@ -39,6 +39,7 @@ export default function UnionsPage() {
         <figure className="subpage-hero__media page-unions__image">
           <Image
             src="/media/community-hero.avif"
+            unoptimized
             alt="A gathering of Nigerian community members in Angola"
             width={1500}
             height={1000}
