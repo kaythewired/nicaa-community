@@ -141,7 +141,7 @@ export const leaders: Leader[] = [
   {
     name: "Hon. Edeh Earlymoomor",
     role: "Vice President",
-    image: "/media/leader-02.avif",
+    image: "/media/leader-02-enhanced.png",
   },
   {
     name: "Hon. Ofoedu Chukwuma Anthony",
