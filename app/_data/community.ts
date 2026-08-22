@@ -166,7 +166,7 @@ export const leaders: Leader[] = [
   {
     name: "Hon. Chijioke Ogbonna",
     role: "Treasurer",
-    image: "/media/leader-07-enhanced.png",
+    image: "/media/leader-07.avif",
   },
   {
     name: "Hon. Chika Michael G.",
