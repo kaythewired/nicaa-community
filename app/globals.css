@@ -786,6 +786,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .history-chapters__year { margin: 0; color: var(--palm); font-family: var(--display); font-size: clamp(34px, 4vw, 57px); line-height: .85; }
 .history-chapters h2 { max-width: 720px; margin: 0 0 18px; font-size: clamp(37px, 4.5vw, 68px); line-height: .84; }
 .history-chapters div p { max-width: 710px; margin: 0; color: rgba(20,32,25,.63); line-height: 1.8; }
+.history-timeline { padding: clamp(62px, 8vw, 118px) max(40px, calc((100vw - 1440px) / 2)); background: var(--ivory); }
+.history-timeline__inner { width: min(1360px, 100%); margin: 0 auto; }
+.history-timeline__heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: clamp(42px, 6vw, 78px); }
+.history-timeline__heading .subpage-kicker { margin: 0; }
+.history-timeline__heading > p:last-child { max-width: 475px; margin: 0; color: rgba(20,32,25,.65); line-height: 1.75; }
+.history-timeline__navigation { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: clamp(36px, 5vw, 62px); }
+.history-timeline__line { position: absolute; top: 17px; right: 8%; left: 8%; height: 1px; background: rgba(20,32,25,.2); }
+.history-timeline__line i { display: block; width: 100%; height: 100%; transform: scaleX(var(--history-progress)); transform-origin: left center; background: var(--terracotta); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.history-timeline__era { position: relative; z-index: 1; display: grid; justify-items: center; gap: 12px; padding: 0; border: 0; background: transparent; color: rgba(20,32,25,.56); cursor: pointer; text-align: center; transition: color .2s ease, transform .2s ease; }
+.history-timeline__era::before { width: 13px; height: 13px; border: 3px solid var(--ivory); border-radius: 50%; background: rgba(20,32,25,.3); box-shadow: 0 0 0 1px rgba(20,32,25,.24); content: ""; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+.history-timeline__era:hover { color: var(--ink); transform: translateY(-3px); }
+.history-timeline__era--active { color: var(--ink); }
+.history-timeline__era--active::before { transform: scale(1.22); background: var(--terracotta); box-shadow: 0 0 0 5px rgba(184,23,45,.13); }
+.history-timeline__era span { font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+.history-timeline__era strong { font-family: var(--display); font-size: clamp(20px, 2vw, 30px); line-height: .9; }
+.history-timeline__chapter { display: grid; grid-template-columns: 85px 190px minmax(0, 1fr) auto; gap: clamp(21px, 4vw, 64px); align-items: start; padding: clamp(34px, 5vw, 72px); border: 1px solid var(--line); background: var(--paper); box-shadow: 12px 12px 0 rgba(0,135,81,.12); animation: history-timeline-enter .42s ease both; }
+.history-timeline__chapter-number { margin: 5px 0 0; color: var(--terracotta); font-size: 10px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.history-timeline__chapter-year { margin: 0; color: var(--palm); font-family: var(--display); font-size: clamp(46px, 5vw, 75px); line-height: .8; }
+.history-timeline__chapter h2 { max-width: 690px; margin: 0 0 19px; font-size: clamp(34px, 4.2vw, 67px); line-height: .87; }
+.history-timeline__chapter div > p { max-width: 690px; margin: 0; color: rgba(20,32,25,.67); line-height: 1.8; }
+.history-timeline__next { display: inline-flex; align-items: center; gap: 12px; align-self: end; justify-self: end; padding: 0 0 8px; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--palm); font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: gap .2s ease, color .2s ease; }
+.history-timeline__next:hover { gap: 20px; color: var(--terracotta); }
+@keyframes history-timeline-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .ambassador-hero { grid-template-columns: 1fr minmax(340px, .55fr); }
 .ambassador-hero__portrait { height: 570px; border-radius: 46% 46% 0 0; background: var(--ivory); }
 .ambassador-hero__portrait img { object-fit: contain; object-position: bottom; }
@@ -857,6 +880,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .president-ledger__portrait { width: 110px; height: 132px; }
   .president-ledger__note { grid-column: 3; }
   .history-chapters article { grid-template-columns: 50px 125px 1fr; }
+  .history-timeline__heading { align-items: start; flex-direction: column; }
+  .history-timeline__chapter { grid-template-columns: 68px 150px minmax(0, 1fr); }
+  .history-timeline__next { grid-column: 3; justify-self: start; }
   .brochure-cover { width: min(560px, calc(100% - 35px)); min-height: 500px; margin: 15px 0 20px; }
   .brochure-pages__grid { grid-template-columns: 1fr; width: min(620px, 100%); }
   .brochure-request { align-items: flex-start; flex-direction: column; }
@@ -872,6 +898,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .history-chapters article { grid-template-columns: 42px 1fr; gap: 15px; }
   .history-chapters__year { grid-column: 2; }
   .history-chapters div { grid-column: 2; }
+  .history-timeline { padding-right: 16px; padding-left: 16px; }
+  .history-timeline__heading { margin-bottom: 38px; }
+  .history-timeline__navigation { grid-template-columns: repeat(5, minmax(80px, 1fr)); gap: 5px; margin-right: -16px; margin-bottom: 35px; overflow-x: auto; padding: 0 16px 8px 0; }
+  .history-timeline__line { right: 6%; left: 6%; }
+  .history-timeline__era { min-width: 80px; }
+  .history-timeline__chapter { grid-template-columns: 1fr; gap: 18px; padding: 30px 23px; box-shadow: 8px 8px 0 rgba(0,135,81,.12); }
+  .history-timeline__chapter-number { margin: 0; }
+  .history-timeline__chapter-year { font-size: 49px; }
+  .history-timeline__next { grid-column: auto; justify-self: start; margin-top: 8px; }
   .ambassador-notice { padding-top: 70px; padding-bottom: 70px; }
   .brochure-contents { grid-template-columns: 1fr; }
   .brochure-contents article:nth-child(2n) { border-top: 0; border-left: 1px solid var(--line); }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HistoryTimeline } from "../_components/HistoryTimeline";
 
 export const metadata: Metadata = {
   title: "History of NICAA",
@@ -71,18 +72,7 @@ export default function HistoryPage() {
         </p>
       </section>
 
-      <section className="subpage-section history-chapters" aria-label="NICAA history chapters">
-        {chapters.map((chapter, index) => (
-          <article key={chapter.year}>
-            <p className="history-chapters__index">{String(index + 1).padStart(2, "0")}</p>
-            <p className="history-chapters__year">{chapter.year}</p>
-            <div>
-              <h2>{chapter.title}</h2>
-              <p>{chapter.copy}</p>
-            </div>
-          </article>
-        ))}
-      </section>
+      <HistoryTimeline chapters={chapters} />
 
       <aside className="subpage-callout" aria-label="Past presidents">
         <div>
