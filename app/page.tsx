@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function Home() {
   const featuredLeaders = leaders.slice(0, 3);
   const featuredNews = newsItems.slice(0, 3);
-  const unionTickerRows = Array.from({ length: 3 }, (_, rowIndex) =>
-    townUnions.filter((_, unionIndex) => unionIndex % 3 === rowIndex),
+  const unionTickerRows = Array.from({ length: 5 }, (_, rowIndex) =>
+    townUnions.filter((_, unionIndex) => unionIndex % 5 === rowIndex),
   );
 
   return (
