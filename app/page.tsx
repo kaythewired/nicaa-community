@@ -19,28 +19,7 @@ export default function Home() {
 
   return (
     <main id="main-content" className="nicaa-home">
-      <section className="nicaa-home__hero">
-        <div className="site-shell nicaa-home__hero-layout">
-          <div className="nicaa-home__hero-copy">
-            <p className="nicaa-home__eyebrow">Nigerian Community in Angola Association</p>
-            <p className="nicaa-home__location">Luanda, Angola</p>
-            <h1>A home for Nigerians in Angola.</h1>
-            <p className="nicaa-home__intro">
-              NICAA brings our community together to support members, represent shared interests and build respectful ties with our Angolan neighbours.
-            </p>
-            <div className="nicaa-home__hero-actions">
-              <Link className="nicaa-home__button nicaa-home__button--gold" href="/unions">
-                Find your town union <span aria-hidden="true">→</span>
-              </Link>
-              <Link className="nicaa-home__button nicaa-home__button--outline" href="/about">
-                Learn about NICAA
-              </Link>
-            </div>
-          </div>
-
-          <WelcomeCarousel />
-        </div>
-      </section>
+      <WelcomeCarousel />
 
       <section className="nicaa-home__welcome">
         <div className="site-shell nicaa-home__welcome-grid">

@@ -949,18 +949,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nicaa-welcome-carousel__slide--active { opacity: 1; }
 .nicaa-welcome-carousel__slide::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 44%, rgba(0,0,0,.78)); content: ""; pointer-events: none; }
 .nicaa-welcome-carousel__slide img { width: 100%; height: 100%; object-fit: cover; }
-.nicaa-welcome-carousel__caption { position: absolute; z-index: 1; right: 28px; bottom: 77px; left: 28px; padding: 15px 17px 17px; border-left: 3px solid white; background: rgba(0,0,0,.55); color: white; animation: nicaa-welcome-caption-in .5s ease both; backdrop-filter: blur(4px); }
-.nicaa-welcome-carousel__caption p { margin: 0 0 7px; color: white; font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.nicaa-welcome-carousel__caption strong { display: block; max-width: 350px; font-size: clamp(21px, 2.3vw, 32px); letter-spacing: -.035em; line-height: 1.05; }
-.nicaa-welcome-carousel__controls { position: absolute; z-index: 2; right: 24px; bottom: 21px; left: 24px; display: grid; grid-template-columns: 32px 1fr 32px; gap: 12px; align-items: center; }
-.nicaa-welcome-carousel__controls > button { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.76); border-radius: 50%; background: rgba(9,9,9,.58); color: white; font-size: 17px; cursor: pointer; transition: background .2s ease, color .2s ease; }
-.nicaa-welcome-carousel__controls > button:hover { border-color: var(--gold); background: var(--gold); color: white; }
-.nicaa-welcome-carousel__dots { display: flex; justify-content: center; gap: 8px; }
-.nicaa-welcome-carousel__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.52); cursor: pointer; transition: width .2s ease, border-radius .2s ease, background .2s ease; }
-.nicaa-welcome-carousel__dots button.nicaa-welcome-carousel__dot--active { width: 24px; border-radius: 20px; background: var(--gold); }
-.nicaa-welcome-carousel__caption { display: block; }
-.nicaa-welcome-carousel__controls { display: none; }
-@keyframes nicaa-welcome-caption-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.nicaa-home__hero h1 { animation: nicaa-hero-heading-in .55s ease both; }
+@keyframes nicaa-hero-heading-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
 .nicaa-home__welcome { padding: clamp(78px, 10vw, 145px) 0 clamp(45px, 6vw, 78px); background: var(--paper); }
 .nicaa-home__welcome-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(250px, .55fr); gap: clamp(25px, 4vw, 66px); align-items: start; }
@@ -1072,9 +1062,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nicaa-home__intro { font-size: 15px; }
   .nicaa-home__hero-actions { align-items: stretch; flex-direction: column; margin-top: 31px; }
   .nicaa-welcome-carousel { min-height: 320px; box-shadow: 10px 10px 0 var(--gold); }
-  .nicaa-welcome-carousel__caption { right: 17px; bottom: 65px; left: 17px; }
-  .nicaa-welcome-carousel__caption strong { font-size: 22px; }
-  .nicaa-welcome-carousel__controls { right: 17px; bottom: 15px; left: 17px; }
   .nicaa-home__welcome-grid { grid-template-columns: 1fr; gap: 20px; }
   .nicaa-home__welcome-grid > p:last-child { grid-column: auto; }
   .nicaa-home__action-grid, .nicaa-home__leaders-grid { grid-template-columns: 1fr; }
@@ -1101,14 +1088,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nicaa-home__hero-layout { display: block; min-height: min(780px, calc(100svh - 86px)); padding: clamp(74px, 10vw, 142px) 0 clamp(88px, 11vw, 150px); }
 .nicaa-home__hero .nicaa-home__hero-copy { position: relative; z-index: 3; max-width: 660px; }
 .nicaa-home__hero .nicaa-welcome-carousel { position: absolute; z-index: 0; inset: 0; width: 100%; min-height: 100%; box-shadow: none; }
-.nicaa-home__hero .nicaa-welcome-carousel__caption { right: max(40px, calc((100vw - 1440px) / 2)); bottom: 78px; left: auto; width: min(390px, 32vw); }
-.nicaa-home__hero .nicaa-welcome-carousel__controls { right: max(40px, calc((100vw - 1440px) / 2)); bottom: 26px; left: auto; width: min(390px, 32vw); }
 
 @media (max-width: 900px) {
   .nicaa-home__hero, .nicaa-home__hero-layout { min-height: 680px; }
   .nicaa-home__hero::before { background: linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.55)); }
-  .nicaa-home__hero .nicaa-welcome-carousel__caption { right: 40px; left: auto; width: min(380px, 47vw); }
-  .nicaa-home__hero .nicaa-welcome-carousel__controls { right: 40px; left: auto; width: min(380px, 47vw); }
 }
 
 @media (max-width: 640px) {
@@ -1116,8 +1099,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nicaa-home__hero-layout { padding: 58px 0 92px; }
   .nicaa-home__hero::before { background: linear-gradient(180deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.68) 63%, rgba(0,0,0,.42) 100%); }
   .nicaa-home__hero .nicaa-home__hero-copy { max-width: 100%; }
-  .nicaa-home__hero .nicaa-welcome-carousel__caption { right: 16px; bottom: 68px; left: 16px; width: auto; }
-  .nicaa-home__hero .nicaa-welcome-carousel__controls { right: 16px; bottom: 17px; left: 16px; width: auto; }
 }
 
 /* Shared page-heading legibility */
