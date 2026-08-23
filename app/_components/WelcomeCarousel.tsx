@@ -85,7 +85,7 @@ export function WelcomeCarousel() {
         ))}
       </div>
 
-      <div className="nicaa-welcome-carousel__caption" aria-live="polite">
+      <div className="nicaa-welcome-carousel__caption" aria-live="polite" key={slides[activeIndex].image}>
         <p>{slides[activeIndex].eyebrow}</p>
         <strong>{slides[activeIndex].title}</strong>
       </div>
