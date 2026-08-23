@@ -250,7 +250,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .union-card-summary { display: grid; min-height: 150px; grid-template-columns: 40px 1fr 24px; align-items: center; gap: 16px; padding: 20px; cursor: pointer; list-style: none; }
 .union-card-summary::-webkit-details-marker { display: none; }
 .union-card-letter { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid currentColor; border-radius: 50%; color: var(--terracotta); font-family: var(--display); font-size: 18px; }
-.union-card:hover .union-card-letter, .union-card[open] .union-card-letter { color: var(--gold); }
+.union-card:hover .union-card-letter, .union-card[open] .union-card-letter { color: white; }
 .union-card-copy { min-width: 0; }
 .union-card-label { display: block; margin-bottom: 7px; color: rgba(20,32,25,.5); font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .union-card:hover .union-card-label, .union-card[open] .union-card-label { color: rgba(255,255,255,.62); }
@@ -261,13 +261,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .union-card-match > span { color: #0b6640; font-size: 8px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
 .union-card-match strong { overflow: hidden; color: rgba(20,32,25,.82); font-family: var(--sans); font-size: 11px; font-weight: 800; letter-spacing: 0; line-height: 1.42; text-overflow: ellipsis; }
 .union-card:hover .union-card-match, .union-card[open] .union-card-match { background: rgba(255,255,255,.1); }
-.union-card:hover .union-card-match > span, .union-card[open] .union-card-match > span { color: var(--gold); }
+.union-card:hover .union-card-match > span, .union-card[open] .union-card-match > span { color: white; }
 .union-card:hover .union-card-match strong, .union-card[open] .union-card-match strong { color: rgba(255,255,255,.9); }
 .union-card-arrow { display: grid; width: 24px; height: 24px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 18px; line-height: 1; transition: transform .2s ease; }
 .union-card-arrow::before { content: "+"; }
 .union-card[open] .union-card-arrow { transform: rotate(45deg); }
 .union-card-roster { margin: 0 20px 20px; padding: 25px 0 0; border-top: 1px solid rgba(255,255,255,.28); }
-.union-card-roster h3 { margin: 0 0 13px; color: var(--gold); font-family: var(--sans); font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.union-card-roster h3 { margin: 0 0 13px; color: white; font-family: var(--sans); font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .union-roster-officers { margin-bottom: 28px; }
 .union-roster-officers ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .union-roster-officers li { color: rgba(255,255,255,.83); font-size: 13px; line-height: 1.55; }
@@ -439,12 +439,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .resource-card:hover { background: var(--palm); color: white; }
 .resource-card__number { float: right; color: var(--terracotta); font-family: var(--display); font-size: 28px; }
 .resource-card__label { margin-bottom: 66px; color: var(--terracotta); font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-.resource-card:hover .resource-card__label, .resource-card:hover .resource-card__number { color: var(--gold); }
+.resource-card:hover .resource-card__label, .resource-card:hover .resource-card__number { color: white; }
 .resource-card h3 { margin: 0 0 15px; font-size: clamp(35px, 4vw, 58px); line-height: .85; }
 .resource-card > p:not(.resource-card__number,.resource-card__label) { max-width: 530px; margin-bottom: 28px; color: rgba(20,32,25,.62); font-size: 14px; line-height: 1.7; }
 .resource-card:hover > p:not(.resource-card__number,.resource-card__label) { color: rgba(255,255,255,.65); }
 .resource-card__link { display: inline-block; padding-bottom: 6px; border-bottom: 1px solid currentColor; color: var(--palm); font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-.resource-card:hover .resource-card__link { color: var(--gold); }
+.resource-card:hover .resource-card__link { color: white; }
 .resource-archive { display: grid; grid-template-columns: .7fr 1fr; align-items: center; gap: clamp(50px, 8vw, 125px); }
 .resource-archive__image { position: relative; height: 650px; overflow: hidden; background: var(--ivory); }
 .resource-archive__image img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
@@ -827,7 +827,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .brochure-cover::before { top: -32%; right: -25%; width: 120%; aspect-ratio: 1; }
 .brochure-cover::after { right: 11%; bottom: 25%; width: 35%; aspect-ratio: 1; border-color: rgba(255,255,255,.22); }
 .brochure-cover p, .brochure-cover strong, .brochure-cover span, .brochure-cover i { position: relative; z-index: 1; }
-.brochure-cover p { margin: 0 0 44px; color: var(--gold); font-size: 11px; font-weight: 900; letter-spacing: .22em; }
+.brochure-cover p { margin: 0 0 44px; color: white; font-size: 11px; font-weight: 900; letter-spacing: .22em; }
 .brochure-cover strong { color: var(--ivory); font-family: var(--display); font-size: clamp(100px, 13vw, 180px); font-weight: 400; line-height: .63; letter-spacing: -.09em; }
 .brochure-cover span { max-width: 225px; margin-top: 31px; font-family: var(--display); font-size: 29px; line-height: .9; }
 .brochure-cover i { margin-top: 52px; color: #bfe2c6; font-size: 9px; font-style: normal; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
@@ -928,7 +928,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nicaa-home__hero-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(410px, .83fr); gap: clamp(44px, 7vw, 116px); align-items: center; min-height: 650px; padding: clamp(66px, 9vw, 126px) 0 clamp(74px, 9vw, 116px); }
 .nicaa-home__hero-copy { max-width: 670px; }
 .nicaa-home__eyebrow, .nicaa-home__location { margin: 0; font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.nicaa-home__eyebrow { color: var(--gold); }
+.nicaa-home__eyebrow { color: white; }
 .nicaa-home__location { margin-top: 9px; color: rgba(255,255,255,.7); }
 .nicaa-home__hero h1 { max-width: 650px; margin: 36px 0 25px; font-size: clamp(53px, 6.35vw, 104px); line-height: .91; }
 .nicaa-home__intro { max-width: 555px; margin: 0; color: rgba(255,255,255,.78); font-size: 17px; line-height: 1.78; }
