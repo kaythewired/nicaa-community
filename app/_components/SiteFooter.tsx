@@ -46,7 +46,14 @@ export function SiteFooter() {
           <span>Nigerian Community<br />in Angola</span>
         </div>
         <p>Peace · Unity · Progress</p>
-        <p>Developed by Bayworld Creatives</p>
+        <a
+          className="footer-credit"
+          href="https://bayworldcreatives.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Developed by Bayworld Creatives
+        </a>
         <p>© {new Date().getFullYear()} NICAA</p>
       </div>
     </footer>
