@@ -46,6 +46,7 @@ export function SiteFooter() {
           <span>Nigerian Community<br />in Angola</span>
         </div>
         <p>Peace · Unity · Progress</p>
+        <p>Developed by Bayworld Creatives</p>
         <p>© {new Date().getFullYear()} NICAA</p>
       </div>
     </footer>
