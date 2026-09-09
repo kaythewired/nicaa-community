@@ -36,8 +36,20 @@ test("server-renders the NICAA homepage", async () => {
   assert.doesNotMatch(html, /codex-preview|loading skeleton|_sites-preview/i);
 });
 
+test("server-renders the complete community gallery", async () => {
+  const response = await render("/gallery");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /A gathering shaped by welcome, culture, and connection/i);
+  assert.match(html, /Photographs<\/dt><dd>24/);
+  assert.match(html, /community-reception-01\.webp/);
+  assert.match(html, /community-reception-24\.webp/);
+  assert.match(html, /Open photograph 24/i);
+});
+
 test("keeps the starter preview removed and the community routes wired", async () => {
-  const routes = ["about", "leadership", "unions", "news", "resources", "contact"];
+  const routes = ["about", "leadership", "unions", "news", "gallery", "resources", "contact"];
   const [layout, home, data, rosters, documents, packageJson, ...routeSources] = await Promise.all([
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),

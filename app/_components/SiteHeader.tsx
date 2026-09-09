@@ -10,6 +10,7 @@ const navigation = [
   { href: "/leadership", label: "Leadership" },
   { href: "/unions", label: "Town unions" },
   { href: "/news", label: "News" },
+  { href: "/gallery", label: "Gallery" },
 ] as const;
 
 const moreNavigation = [

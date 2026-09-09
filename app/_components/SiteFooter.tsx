@@ -3,6 +3,7 @@ const navigation = [
   ["Leadership", "/leadership"],
   ["Town unions", "/unions"],
   ["News", "/news"],
+  ["Gallery", "/gallery"],
   ["Archive & resources", "/resources"],
   ["Past presidents", "/past-presidents"],
   ["Contact", "/contact"],
