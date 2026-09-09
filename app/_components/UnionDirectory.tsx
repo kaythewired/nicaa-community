@@ -21,7 +21,7 @@ type SearchableUnion = TownUnion & Roster & {
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const allLetters = "ALL";
-const officerLine = /^(chairman|vice chairman|secretary|secreatry|assistant secretary|treasurer|financial secretary|provost|president|pro\b)/i;
+const officerLine = /^(chairman|chiarman|chirman|vice chairman|secretary|secreatary|secreatry|assistant secretary|treasurer|financial secretary|provost|president|pro\b)/i;
 
 function normaliseLetter(letter: string) {
   return letter.trim().charAt(0).toLocaleUpperCase();
@@ -252,6 +252,16 @@ export function UnionDirectory({ unions = townUnions }: UnionDirectoryProps) {
                 </summary>
 
                 <div className="union-card-roster">
+                  <a
+                    className="union-document-download"
+                    href={union.documentUrl}
+                    download={union.documentName}
+                    aria-label={`Download the ${union.name} Word roster`}
+                  >
+                    <span>Download source document</span>
+                    <span aria-hidden="true">DOCX ↓</span>
+                  </a>
+
                   {union.officers.length > 0 ? (
                     <section className="union-roster-officers" aria-label={`${union.name} officers and contact details`}>
                       <h3>Officers and contact details</h3>

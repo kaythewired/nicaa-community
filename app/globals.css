@@ -269,6 +269,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .union-card-arrow::before { content: "+"; }
 .union-card[open] .union-card-arrow { transform: rotate(45deg); }
 .union-card-roster { margin: 0 20px 20px; padding: 25px 0 0; border-top: 1px solid rgba(255,255,255,.28); }
+.union-document-download { display: flex; min-height: 46px; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 25px; padding: 0 15px; border: 1px solid rgba(255,255,255,.38); color: white; font-size: 9px; font-weight: 900; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+.union-document-download:hover, .union-document-download:focus-visible { background: white; color: var(--palm); outline: none; }
 .union-card-roster h3 { margin: 0 0 13px; color: white; font-family: var(--sans); font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .union-roster-officers { margin-bottom: 28px; }
 .union-roster-officers ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }

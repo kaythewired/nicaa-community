@@ -58,9 +58,9 @@ export default function UnionsPage() {
           <p className="subpage-kicker">Community directory</p>
           <h2 id="directory-title">Search a town union, officer, or member name.</h2>
           <p>
-            This complete public record preserves the town-union rosters,
-            officers, and contact details published on the original NICAA
-            directory. Open any union card to see its full list.
+            This complete public record includes the latest town-union rosters,
+            officers, and contact details supplied to NICAA. Open any union card
+            to see its full list or download the original Word document.
           </p>
         </header>
         <UnionDirectory unions={townUnions} />
@@ -87,9 +87,9 @@ export default function UnionsPage() {
       <aside className="page-unions__privacy" aria-label="Directory source note">
         <p className="subpage-kicker">Directory record</p>
         <p>
-          This page reproduces the public town-union information from the
-          original NICAA website in a clearer searchable format. To correct or
-          update a listing, contact the community office at{" "}
+          This page presents the public town-union information supplied to
+          NICAA in a clear searchable format, with the source documents available
+          for download. To correct or update a listing, contact the community office at{" "}
           <a href="mailto:nigeriancommunityinangola@gmail.com">
             nigeriancommunityinangola@gmail.com
           </a>

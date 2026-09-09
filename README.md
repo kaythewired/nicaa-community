@@ -6,7 +6,7 @@ A modern, editorial community website for the Nigerian Community in Angola
 ## Experience
 
 - Cinematic, responsive homepage with scroll reveals and editorial motion
-- Searchable A–Z directory of 81 town unions
+- Searchable A–Z directory of 93 town unions
 - Leadership profiles for the 11-member executive council
 - Community history, objectives, news, resources, and contact routes
 - Privacy-conscious public content with member rosters and personal numbers omitted
