@@ -41,8 +41,11 @@ test("server-renders the complete community gallery", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /A gathering shaped by welcome, culture, and connection/i);
-  assert.match(html, /Photographs<\/dt><dd>24/);
+  assert.match(html, /The community’s story, progress, and shared moments/i);
+  assert.match(html, /Photographs<\/dt><dd>27/);
+  assert.match(html, /Secretariat Complex at Golf 11/i);
+  assert.match(html, /secretariat-construction-01\.webp/);
+  assert.match(html, /secretariat-construction-03\.webp/);
   assert.match(html, /community-reception-01\.webp/);
   assert.match(html, /community-reception-24\.webp/);
   assert.match(html, /Open photograph 24/i);

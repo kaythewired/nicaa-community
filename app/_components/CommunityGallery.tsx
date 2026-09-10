@@ -12,7 +12,7 @@ type GalleryImage = {
   featured?: boolean;
 };
 
-const galleryImages: GalleryImage[] = [
+const receptionImages: GalleryImage[] = [
   { src: "/media/gallery/community-reception-01.webp", alt: "Community representatives welcoming a guest in purple attire at a reception in Luanda", caption: "A warm welcome at the reception", width: 1124, height: 750, featured: true },
   { src: "/media/gallery/community-reception-02.webp", alt: "Two guests waving during their arrival at the community reception", caption: "Greetings on arrival", width: 1124, height: 750 },
   { src: "/media/gallery/community-reception-03.webp", alt: "Community members presenting commemorative artwork to a guest", caption: "A presentation of commemorative artwork", width: 1124, height: 750 },
@@ -39,7 +39,18 @@ const galleryImages: GalleryImage[] = [
   { src: "/media/gallery/community-reception-24.webp", alt: "Community representatives in white traditional attire posing together", caption: "Tradition, unity, and community", width: 1124, height: 750 },
 ];
 
-export function CommunityGallery() {
+const constructionImages: GalleryImage[] = [
+  { src: "/media/gallery/secretariat-construction-01.webp", alt: "Construction workers in safety vests and helmets working on the proposed Secretariat Complex at Golf 11", caption: "Construction activity at the Golf 11 site", width: 1280, height: 960, featured: true },
+  { src: "/media/gallery/secretariat-construction-02.webp", alt: "Architectural rendering of the proposed multi-storey NICAA Secretariat Complex", caption: "The proposed Secretariat Complex", width: 960, height: 1280 },
+  { src: "/media/gallery/secretariat-construction-03.webp", alt: "Workers measuring and cutting timber beside the construction licence at the Golf 11 site", caption: "Licensed construction work in progress", width: 1280, height: 960 },
+];
+
+type CommunityGalleryProps = {
+  collection?: "reception" | "construction";
+};
+
+export function CommunityGallery({ collection = "reception" }: CommunityGalleryProps) {
+  const galleryImages = collection === "construction" ? constructionImages : receptionImages;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -82,7 +93,7 @@ export function CommunityGallery() {
 
   return (
     <>
-      <div className="community-gallery-grid">
+      <div className={`community-gallery-grid community-gallery-grid--${collection}`}>
         {galleryImages.map((image, index) => (
           <figure
             className={`community-gallery-card${image.featured ? " community-gallery-card--featured" : ""}${image.height > image.width ? " community-gallery-card--portrait" : ""}`}

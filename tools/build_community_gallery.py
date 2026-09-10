@@ -6,7 +6,7 @@ from PIL import Image
 SOURCE_DIR = Path(r"C:\Users\Baylord\AppData\Local\Temp")
 OUTPUT_DIR = Path(__file__).resolve().parents[1] / "public" / "media" / "gallery"
 
-SOURCE_FILES = [
+RECEPTION_SOURCE_FILES = [
     "codex-clipboard-3b0deaee-627b-4c75-9c99-d274f143b2b1.png",
     "codex-clipboard-342529c4-a399-484a-bc3f-aa68d49c34cc.png",
     "codex-clipboard-96754b75-7877-48c9-8741-6186bd10030f.jpg",
@@ -33,21 +33,33 @@ SOURCE_FILES = [
     "codex-clipboard-fc270717-aa4f-40b1-bfb9-c1d108f1829f.jpg",
 ]
 
+CONSTRUCTION_SOURCE_FILES = [
+    "codex-clipboard-a1a34893-c735-4adf-80db-2be0ef352196.png",
+    "codex-clipboard-9f2c7f35-8ee9-4f47-95fb-d438486c2780.png",
+    "codex-clipboard-c9550155-6c98-47e2-b02f-4dced390918c.png",
+]
+
 
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    for index, source_name in enumerate(SOURCE_FILES, start=1):
-        source_path = SOURCE_DIR / source_name
-        if not source_path.is_file():
-            raise FileNotFoundError(source_path)
+    collections = [
+        ("community-reception", RECEPTION_SOURCE_FILES),
+        ("secretariat-construction", CONSTRUCTION_SOURCE_FILES),
+    ]
 
-        output_path = OUTPUT_DIR / f"community-reception-{index:02d}.webp"
-        with Image.open(source_path) as image:
-            image = image.convert("RGB")
-            image.thumbnail((1800, 1800), Image.Resampling.LANCZOS)
-            image.save(output_path, "WEBP", quality=86, method=6)
-            print(f"{output_path.name}: {image.width}x{image.height}")
+    for output_prefix, source_files in collections:
+        for index, source_name in enumerate(source_files, start=1):
+            source_path = SOURCE_DIR / source_name
+            if not source_path.is_file():
+                raise FileNotFoundError(source_path)
+
+            output_path = OUTPUT_DIR / f"{output_prefix}-{index:02d}.webp"
+            with Image.open(source_path) as image:
+                image = image.convert("RGB")
+                image.thumbnail((1800, 1800), Image.Resampling.LANCZOS)
+                image.save(output_path, "WEBP", quality=86, method=6)
+                print(f"{output_path.name}: {image.width}x{image.height}")
 
 
 if __name__ == "__main__":
