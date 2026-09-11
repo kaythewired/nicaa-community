@@ -1186,6 +1186,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .gallery-hero__details { grid-template-columns: 1fr; }
   .gallery-hero__details div { display: grid; }
   .gallery-collection__header { display: block; }
+  .gallery-collection__header .subpage-kicker { margin-bottom: 17px; }
+  .gallery-collection__header h2 { margin-bottom: 24px; }
   .community-gallery-grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 10px; }
   .community-gallery-card, .community-gallery-card--featured, .community-gallery-card--portrait { grid-column: auto; grid-row: auto; aspect-ratio: 4 / 3; }
   .community-gallery-grid--construction .community-gallery-card:nth-child(1),
